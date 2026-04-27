@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DoSheet - Thanh Toán</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#705d00",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#000201",
+                    "surface-container-high": "#ebe7e9",
+                    "tertiary-fixed": "#82faab",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "primary-container": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fcd400",
+                    "on-surface-variant": "#47464c",
+                    "on-background": "#1c1b1d",
+                    "surface-container": "#f1edef",
+                    "on-secondary-fixed": "#221b00",
+                    "tertiary-container": "#00220e",
+                    "primary-fixed": "#e2e0fc",
+                    "error": "#ba1a1a",
+                    "primary": "#00000b",
+                    "on-primary-fixed-variant": "#45455b",
+                    "secondary-fixed-dim": "#e9c400",
+                    "inverse-primary": "#c6c4df",
+                    "surface-bright": "#fcf8fa",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-tertiary-container": "#009854",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6e5c00",
+                    "on-primary-container": "#83829b",
+                    "inverse-on-surface": "#f4f0f2",
+                    "outline-variant": "#c8c5cd",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-dim": "#ddd9db",
+                    "on-surface": "#1c1b1d",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf8fa",
+                    "outline": "#78767d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f2f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+        .tonal-depth-shift {
+            background-color: rgba(252, 248, 250, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Supressed content but keeping branding for checkout flow) -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<a href="index.html" style="text-decoration:none;color:inherit"><div class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white font-['Plus_Jakarta_Sans']">DoSheet</div></a>
+<div class="flex items-center gap-4">
+<span class="text-sm font-label text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+                    Thanh toán bảo mật
+                </span>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Checkout Form -->
+<div class="lg:col-span-7 space-y-12">
+<!-- Billing Info -->
+<section>
+<div class="flex items-center gap-3 mb-8">
+<span class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-sm">1</span>
+<h2 class="text-xl font-headline font-bold text-primary-container tracking-tight">Thông tin thanh toán</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-outline">Họ tên</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-secondary text-on-surface placeholder:text-on-surface-variant/50" placeholder="Nguyễn Văn A" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-outline">Số điện thoại</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-secondary text-on-surface placeholder:text-on-surface-variant/50" placeholder="090 123 4567" type="tel"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-outline">Email</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl p-4 focus:ring-2 focus:ring-secondary text-on-surface placeholder:text-on-surface-variant/50" placeholder="example@architect.vn" type="email"/>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section>
+<div class="flex items-center gap-3 mb-8">
+<span class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-sm">2</span>
+<h2 class="text-xl font-headline font-bold text-primary-container tracking-tight">Phương thức thanh toán</h2>
+</div>
+<div class="space-y-4">
+<!-- E-Wallet / QR -->
+<div class="relative group cursor-pointer">
+<input checked="" class="peer hidden" id="qr_payment" name="payment" type="radio"/>
+<label class="flex items-center justify-between p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-secondary-container peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high" for="qr_payment">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+</div>
+<div>
+<p class="font-bold text-primary-container">QR Momo / VNPay</p>
+<p class="text-xs text-on-surface-variant">Thanh toán nhanh qua ứng dụng ngân hàng hoặc ví điện tử</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline peer-checked:border-secondary-container flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-secondary scale-0 peer-checked:scale-100 transition-transform"></div>
+</div>
+</label>
+</div>
+<!-- Bank Transfer -->
+<div class="relative group cursor-pointer">
+<input class="peer hidden" id="bank_transfer" name="payment" type="radio"/>
+<label class="flex items-center justify-between p-6 rounded-xl bg-surface-container-low border-2 border-transparent peer-checked:border-secondary-container peer-checked:bg-surface-container-lowest transition-all hover:bg-surface-container-high" for="bank_transfer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+</div>
+<div>
+<p class="font-bold text-primary-container">Chuyển khoản ngân hàng</p>
+<p class="text-xs text-on-surface-variant">Xác nhận thủ công trong vòng 5-10 phút</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline peer-checked:border-secondary-container flex items-center justify-center">
+<div class="w-3 h-3 rounded-full bg-secondary scale-0 peer-checked:scale-100 transition-transform"></div>
+</div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-low rounded-xl p-8 sticky top-32">
+<h2 class="text-xl font-headline font-bold text-primary-container mb-8 tracking-tight">Đơn hàng của bạn</h2>
+<div class="space-y-6">
+<!-- Item -->
+<div class="flex gap-4">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern architectural blueprints and digital tablet on a clean white desk with warm morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLziQe6nB2iggfUzM-Tn-hPzbv2h24Vc-7vbrHY6yZYRNk0AKo91NcJyvHM7jrrjPl6f53K7Eq9z6xCKgNY-0bJUej8af54nsZAhKs1f7ABE0nWzGf-PveY5Ueqd2wUp_lZ8n4A3HNlzXFSYjFod30R4prVf8_Cmgd_mTTqnB6OkOZQ0JXAeJlwpIsslNMcLgSZUkR9tkG2fRC2vOzCASLetMACxBO8uwnW8tkjDinrVFB5I_1birmXALgcRkmWmqwHB3UqF_fSw"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-bold text-primary-container">DoSheet Pro License</h3>
+<p class="text-sm text-on-surface-variant mb-1">Bản quyền trọn đời cho doanh nghiệp kiến trúc</p>
+<span class="text-xs font-label text-tertiary-fixed-dim bg-tertiary-container px-2 py-0.5 rounded">Gói Vĩnh Viễn</span>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 space-y-3">
+<div class="flex justify-between text-on-surface-variant">
+<span>Tạm tính</span>
+<span>2.500.000đ</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Giảm giá (Sớm)</span>
+<span class="text-tertiary-fixed-dim">-500.000đ</span>
+</div>
+<div class="flex justify-between items-end pt-4">
+<span class="font-bold text-primary-container text-lg">Tổng cộng</span>
+<div class="text-right">
+<span class="block text-2xl font-extrabold text-primary-container tracking-tighter">2.000.000đ</span>
+<span class="text-[10px] uppercase tracking-widest text-outline">Đã bao gồm VAT</span>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="pt-8 space-y-4">
+<button class="w-full bg-secondary-container hover:bg-secondary-fixed py-4 rounded-xl font-bold text-on-secondary-container shadow-[0_10px_20px_rgba(252,212,0,0.2)] transition-all active:scale-[0.98]">
+                                    Xác nhận thanh toán
+                                </button>
+<p class="text-xs text-center text-on-surface-variant leading-relaxed px-4">
+                                    Sau khi thanh toán, link Web App sẽ được gửi vào Email của bạn trong 30 giây.
+                                </p>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="mt-12 grid grid-cols-3 gap-4 border-t border-outline-variant/20 pt-8">
+<div class="text-center">
+<span class="material-symbols-outlined text-outline text-xl">verified</span>
+<p class="text-[10px] mt-1 font-label text-outline uppercase tracking-tighter">Bảo mật SSL</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-outline text-xl">bolt</span>
+<p class="text-[10px] mt-1 font-label text-outline uppercase tracking-tighter">Kích hoạt ngay</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-outline text-xl">support_agent</span>
+<p class="text-[10px] mt-1 font-label text-outline uppercase tracking-tighter">Hỗ trợ 24/7</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 mt-auto bg-slate-50 dark:bg-slate-900">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-lg font-bold text-blue-950 dark:text-white font-['Plus_Jakarta_Sans']">DoSheet</div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 max-w-sm">
+                    © 2024 DoSheet. Precision-crafted for architectural business management. 
+                    Giải pháp quản lý dữ liệu chuyên dụng cho kiến trúc sư.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-2 md:justify-end items-center">
+<a class="text-sm font-['Plus_Jakarta_Sans'] text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all" href="#">Privacy Policy</a>
+<a class="text-sm font-['Plus_Jakarta_Sans'] text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all" href="#">Terms of Service</a>
+<a class="text-sm font-['Plus_Jakarta_Sans'] text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all" href="help-center.html">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

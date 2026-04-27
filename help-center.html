@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DoSheet Help Center | Architectural Ledger Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "primary-fixed": "#e2e0fc",
+                    "outline": "#78767d",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-container": "#6e5c00",
+                    "secondary-fixed": "#ffe16d",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcf8fa",
+                    "tertiary": "#000201",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#544600",
+                    "surface-dim": "#ddd9db",
+                    "on-primary-fixed-variant": "#45455b",
+                    "background": "#fcf8fa",
+                    "surface-tint": "#5d5c74",
+                    "inverse-primary": "#c6c4df",
+                    "surface-container-high": "#ebe7e9",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#e9c400",
+                    "tertiary-container": "#00220e",
+                    "secondary": "#705d00",
+                    "on-tertiary-container": "#009854",
+                    "secondary-container": "#fcd400",
+                    "primary": "#00000b",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-secondary-fixed": "#221b00",
+                    "primary-fixed-dim": "#c6c4df",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-fixed": "#82faab",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "on-surface": "#1c1b1d",
+                    "primary-container": "#1a1a2e",
+                    "inverse-on-surface": "#f4f0f2",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container": "#f1edef",
+                    "on-primary-container": "#83829b",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-background": "#1c1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ledger-shadow {
+            box-shadow: 0 20px 40px rgba(26, 26, 46, 0.06);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/85 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white">DoSheet</span>
+<div class="hidden md:flex items-center gap-6 font-plus-jakarta text-sm font-medium tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-yellow-200 transition-all duration-300" href="dashboard.html">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-yellow-200 transition-all duration-300" href="dashboard.html">Analytics</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-yellow-200 transition-all duration-300" href="#">Team</a>
+<a class="text-blue-950 dark:text-yellow-400 font-bold border-b-2 border-yellow-500 pb-1" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:block relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-lg text-sm focus:ring-2 focus:ring-secondary outline-none w-64 transition-all" placeholder="Search Help..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_circle">account_circle</span>
+</button>
+<button class="signature-gradient text-white px-5 py-2 rounded-lg text-sm font-bold scale-95 active:opacity-80 transition-transform">
+                        Add to Sheet
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="relative px-8 py-24 overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-low -z-10">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-secondary-fixed opacity-10 blur-3xl transform translate-x-1/2 -rotate-12"></div>
+</div>
+<div class="max-w-4xl mx-auto text-center">
+<p class="font-label text-xs uppercase tracking-widest text-secondary font-bold mb-4">Support Hub</p>
+<h1 class="text-5xl md:text-6xl font-bold tracking-tighter text-primary-container mb-12">How can we help?</h1>
+<div class="relative max-w-2xl mx-auto">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest py-6 pl-16 pr-8 rounded-xl ledger-shadow border-none focus:ring-2 focus:ring-secondary-fixed transition-all text-lg placeholder:text-on-surface-variant/50" placeholder="Search for articles, guides, or keywords..." type="text"/>
+</div>
+<div class="mt-8 flex flex-wrap justify-center gap-3 text-sm text-on-surface-variant">
+<span>Popular:</span>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-fixed/30 transition-colors">API Keys</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-fixed/30 transition-colors">Zalo Integration</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-fixed/30 transition-colors">Billing Export</button>
+</div>
+</div>
+</section>
+<!-- Category Bento Grid -->
+<section class="px-8 max-w-7xl mx-auto mt-[-40px]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Getting Started -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl ledger-shadow group hover:translate-y-[-4px] transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed/10 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:scale-110 transition-transform"></div>
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="text-2xl font-bold text-primary-container mb-2">Getting Started</h3>
+<p class="text-on-surface-variant text-sm mb-6 max-w-xs">Everything you need to set up your architectural ledger in under 5 minutes.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-sm font-medium hover:text-secondary cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span> Account Setup Checklist
+                        </li>
+<li class="flex items-center gap-2 text-sm font-medium hover:text-secondary cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span> Importing Legacy Data
+                        </li>
+</ul>
+</div>
+<!-- Using the Tools -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ledger-shadow hover:translate-y-[-4px] transition-all duration-300">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">construction</span>
+<h3 class="text-xl font-bold text-primary-container mb-2">Using the Tools</h3>
+<p class="text-on-surface-variant text-xs mb-6">Deep dives into calculation engines and formula builders.</p>
+<button class="text-secondary font-bold text-xs uppercase tracking-widest flex items-center gap-2">View 18 Articles <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<!-- AI Advisor Guide -->
+<div class="bg-primary-container p-8 rounded-xl ledger-shadow hover:translate-y-[-4px] transition-all duration-300 text-white">
+<span class="material-symbols-outlined text-4xl text-secondary-fixed mb-6" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="text-xl font-bold mb-2">AI Advisor Guide</h3>
+<p class="text-on-primary-container text-xs mb-6">Master prompting for architectural insights and reporting.</p>
+<button class="text-secondary-fixed font-bold text-xs uppercase tracking-widest flex items-center gap-2">Read Guides <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<!-- Billing & Affiliate -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ledger-shadow hover:translate-y-[-4px] transition-all duration-300">
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-6">account_balance_wallet</span>
+<h3 class="text-xl font-bold text-primary-container mb-2">Billing &amp; Affiliate</h3>
+<p class="text-on-surface-variant text-xs mb-6">Manage subscriptions, tax invoices, and referral earnings.</p>
+<button class="text-on-surface font-bold text-xs uppercase tracking-widest flex items-center gap-2">View Portal <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<!-- Spacer/Decorative -->
+<div class="md:col-span-3 bg-surface-container-low rounded-xl flex items-center p-8 gap-8 relative overflow-hidden">
+<div class="flex-1">
+<h4 class="text-xl font-bold text-primary-container mb-2">Can't find what you're looking for?</h4>
+<p class="text-on-surface-variant text-sm">Our dedicated support team is available 24/7 for Enterprise customers.</p>
+</div>
+<button class="bg-white px-8 py-3 rounded-lg text-primary-container font-bold text-sm ledger-shadow hover:bg-primary-container hover:text-white transition-all whitespace-nowrap z-10">
+                        Submit a Ticket
+                    </button>
+<div class="absolute right-0 top-0 bottom-0 w-48 opacity-20 bg-no-repeat bg-cover bg-center" data-alt="minimalist architectural drawing lines and soft shadows on a white textured paper background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnljWlv6ggz2GBbYNflbZ5vTuXvspWeVosSBmh95x0rDd-X8HiWrGtSgQfDz3WFITVB9Ox0TuxMDlj2nEdwoLRM2RzVMTozwipp25hMXHU6UjcV5Y5o9TDDTzfb4p6lSfT6sXDZGQViQB03d56-ANuxt2VZfZcuKwPbMX_Pqnuqh6a0vP4nRV3ZQsVV2bejfmGBHjQjU34IKcYRqydNy40aKt7TFOsaw-kZVBzcri5Pi4MWp_mHPYrk4rGvRZlrRmvCX5nwNmQMA')"></div>
+</div>
+</div>
+</section>
+<!-- Top Articles List -->
+<section class="px-8 max-w-7xl mx-auto py-24">
+<div class="flex flex-col md:flex-row gap-16">
+<div class="md:w-1/3">
+<h2 class="text-3xl font-bold tracking-tighter text-primary-container mb-4">Top Articles</h2>
+<p class="text-on-surface-variant leading-relaxed">Our most frequently visited documentation links to help you solve problems quickly without waiting for a reply.</p>
+<div class="mt-8 p-6 bg-secondary-fixed/10 rounded-xl border-l-4 border-secondary">
+<p class="text-sm font-bold text-secondary mb-1">New Update</p>
+<p class="text-xs text-on-surface-variant font-medium">Auto-sync with Google Drive is now faster. Check out the new permissions guide.</p>
+</div>
+</div>
+<div class="md:w-2/3 space-y-2">
+<div class="group flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-lowest hover:ledger-shadow transition-all cursor-pointer border-b border-transparent">
+<div class="flex items-center gap-6">
+<span class="text-secondary-fixed-dim font-black text-xl">01</span>
+<div>
+<h4 class="font-bold text-primary-container text-lg">How to setup Google Drive permissions</h4>
+<p class="text-sm text-on-surface-variant mt-1">Configure OAuth 2.0 and directory access for auto-exports.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="group flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-lowest hover:ledger-shadow transition-all cursor-pointer border-b border-transparent">
+<div class="flex items-center gap-6">
+<span class="text-secondary-fixed-dim font-black text-xl">02</span>
+<div>
+<h4 class="font-bold text-primary-container text-lg">Connecting your Zalo for AI reports</h4>
+<p class="text-sm text-on-surface-variant mt-1">Receive weekly architectural insights directly to your Zalo app.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="group flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-lowest hover:ledger-shadow transition-all cursor-pointer border-b border-transparent">
+<div class="flex items-center gap-6">
+<span class="text-secondary-fixed-dim font-black text-xl">03</span>
+<div>
+<h4 class="font-bold text-primary-container text-lg">Managing multi-user team roles</h4>
+<p class="text-sm text-on-surface-variant mt-1">Permissions matrix for Architects, Project Managers, and Viewers.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="group flex items-center justify-between p-6 rounded-xl hover:bg-surface-container-lowest hover:ledger-shadow transition-all cursor-pointer border-b border-transparent">
+<div class="flex items-center gap-6">
+<span class="text-secondary-fixed-dim font-black text-xl">04</span>
+<div>
+<h4 class="font-bold text-primary-container text-lg">Troubleshooting Formula Errors</h4>
+<p class="text-sm text-on-surface-variant mt-1">Understanding #REF and #VALUE errors in the ledger engine.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Zalo Button -->
+<div class="fixed bottom-8 right-8 z-50 group">
+<div class="absolute bottom-full right-0 mb-4 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300 pointer-events-none">
+<div class="bg-primary-container text-white text-xs font-bold py-2 px-4 rounded-full whitespace-nowrap shadow-xl">
+                Chat with our Experts on Zalo
+            </div>
+</div>
+<button class="bg-[#0068ff] text-white w-16 h-16 rounded-full flex items-center justify-center ledger-shadow hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-black text-blue-950 dark:text-white">DoSheet</span>
+<p class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500">© 2024 DoSheet Architectural Ledger. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Architecture</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Support</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">API Docs</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Privacy Policy</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

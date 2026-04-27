@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chương trình Đối tác DoSheet - Nhận 50% Hoa hồng</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#83829b",
+                      "on-background": "#1c1b1d",
+                      "surface-container-high": "#ebe7e9",
+                      "error-container": "#ffdad6",
+                      "primary": "#00000b",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#00220e",
+                      "surface-container-highest": "#e5e1e3",
+                      "secondary-container": "#fcd400",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-container": "#6e5c00",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#313032",
+                      "tertiary": "#000201",
+                      "primary-fixed": "#e2e0fc",
+                      "tertiary-fixed": "#82faab",
+                      "on-primary-fixed-variant": "#45455b",
+                      "background": "#fcf8fa",
+                      "surface-container": "#f1edef",
+                      "surface-tint": "#5d5c74",
+                      "secondary-fixed": "#ffe16d",
+                      "on-surface": "#1c1b1d",
+                      "on-primary-fixed": "#1a1a2e",
+                      "surface-dim": "#ddd9db",
+                      "outline": "#78767d",
+                      "on-tertiary-container": "#009854",
+                      "on-tertiary-fixed-variant": "#00522b",
+                      "primary-container": "#1a1a2e",
+                      "on-secondary-fixed-variant": "#544600",
+                      "surface-bright": "#fcf8fa",
+                      "inverse-primary": "#c6c4df",
+                      "secondary-fixed-dim": "#e9c400",
+                      "outline-variant": "#c8c5cd",
+                      "error": "#ba1a1a",
+                      "surface": "#fcf8fa",
+                      "surface-container-low": "#f6f2f4",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#f4f0f2",
+                      "on-secondary-fixed": "#221b00",
+                      "secondary": "#705d00",
+                      "on-tertiary-fixed": "#00210e",
+                      "tertiary-fixed-dim": "#64dd91",
+                      "on-surface-variant": "#47464c",
+                      "surface-variant": "#e5e1e3",
+                      "primary-fixed-dim": "#c6c4df"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Plus Jakarta Sans"],
+                      "label": ["Plus Jakarta Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+        .glass-nav {
+            background: rgba(252, 248, 250, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(26, 26, 46, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] antialiased tracking-tight">
+<a href="index.html" style="text-decoration:none;color:inherit"><div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-50">DoSheet</div></a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-300" href="index.html">Features</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-300" href="index.html">Pricing</a>
+<a class="text-yellow-600 dark:text-yellow-400 font-semibold border-b-2 border-yellow-500" href="affiliate.html">Affiliate Program</a>
+</div>
+<button class="signature-gradient text-white px-6 py-2.5 rounded-xl font-semibold cursor-pointer active:scale-95 transition-transform">Get Started</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-8">
+<div class="inline-block px-4 py-1.5 bg-secondary-fixed/20 text-on-secondary-fixed-variant rounded-full text-xs font-bold tracking-widest uppercase">
+                    CHƯƠNG TRÌNH PARTNER ĐỘC QUYỀN
+                </div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-primary-container leading-[1.1]">
+                    Trở thành Đối tác DoSheet - Nhận <span class="text-secondary">50% Hoa hồng</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    Đồng hành cùng công cụ quản lý dữ liệu thông minh nhất dành cho doanh nghiệp SME. Chia sẻ giá trị, nhận thu nhập bền vững cho mỗi referral thành công.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-bold text-lg hover:brightness-105 transition-all ambient-shadow active:scale-95">
+                        Tham gia ngay
+                    </button>
+<div class="flex items-center gap-3 px-6 py-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-medium text-on-surface-variant">Thanh toán định kỳ hàng tháng</span>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="absolute -inset-4 bg-secondary-fixed/10 blur-3xl rounded-full"></div>
+<img alt="Financial Dashboard" class="relative w-full rounded-2xl ambient-shadow object-cover aspect-[4/3] z-10" data-alt="Modern high-end financial dashboard interface with clean data charts and gold accents reflecting professional architectural ledger style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4RJJMMvd8gHVQ40TAXrNRHyP9TVjDfOb-jcfL4RXFW2LNrpKSzG5sDuM73H_p5DBEDMGK3oiAXRakMUy3Vi1ZQ0rAmAGZd-5O5EGpofNI-iV0XiDDr9reVnYtmCBJ8aUeJBeNcGU1gwx3Xgdbg4VVIh8gwwMrzVg62qK5ERPXAPxnYp47cvCgR0UfusepwJz4RvhPSziwnPT5BGzUl4uipPtYt8eSTTAVfyNrV4gn13ji51vynmeyWIlBsNeMXJ7Xmm9_1My00A"/>
+</div>
+</div>
+</section>
+<!-- How it Works Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-3xl font-bold text-primary-container tracking-tight">Quy trình 3 bước đơn giản</h2>
+<div class="h-1 w-20 bg-secondary-fixed mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-outline-variant/30 -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center ambient-shadow mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="person_add">person_add</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Đăng ký</h3>
+<p class="text-on-surface-variant leading-relaxed">Tham gia chương trình đối tác chỉ trong 1 phút qua form đăng ký đơn giản.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center ambient-shadow mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="share">share</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Chia sẻ</h3>
+<p class="text-on-surface-variant leading-relaxed">Gửi link giới thiệu độc quyền của bạn cho các doanh nghiệp SME đang cần tối ưu quy trình.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 bg-secondary-container rounded-full flex items-center justify-center ambient-shadow mb-6 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" data-icon="payments">payments</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Nhận tiền</h3>
+<p class="text-on-surface-variant leading-relaxed">Nhận hoa hồng 50% ngay lập tức khi khách hàng thanh toán gói dịch vụ đầu tiên.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Commission Structure -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
+<div class="lg:w-1/3 space-y-6">
+<span class="text-secondary font-bold tracking-widest text-xs uppercase">Cơ cấu thu nhập</span>
+<h2 class="text-4xl font-extrabold text-primary-container leading-tight">Mức hoa hồng cạnh tranh nhất thị trường</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                    Chúng tôi tin rằng sự thành công của bạn là sự thành công của DoSheet. Vì vậy, chúng tôi áp dụng chính sách <span class="font-bold text-primary">Hoa hồng trọn đời</span> cho các gói gia hạn.
+                </p>
+<div class="p-6 bg-tertiary-fixed/10 border-l-4 border-tertiary-fixed-dim rounded-r-xl">
+<p class="text-on-tertiary-fixed-variant font-medium italic">
+                        "Doanh nghiệp trung bình thanh toán 15,000,000đ/năm. Bạn nhận ngay 7,500,000đ chỉ với 1 lượt giới thiệu."
+                    </p>
+</div>
+</div>
+<div class="lg:w-2/3 w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl ambient-shadow border border-outline-variant/10">
+<div class="text-secondary text-5xl font-extrabold mb-4">50%</div>
+<h4 class="text-xl font-bold mb-4">Hoa hồng trực tiếp</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                        Áp dụng cho tất cả các giao dịch thành công đầu tiên từ link giới thiệu của bạn. Không giới hạn số lượng khách hàng.
+                    </p>
+<div class="flex items-center gap-2 text-tertiary-fixed-dim font-bold text-xs uppercase">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                        Thanh toán ngay
+                    </div>
+</div>
+<!-- Card 2 -->
+<div class="bg-primary-container p-8 rounded-2xl ambient-shadow">
+<div class="text-secondary-fixed text-5xl font-extrabold mb-4">20%</div>
+<h4 class="text-white text-xl font-bold mb-4">Duy trì trọn đời</h4>
+<p class="text-on-primary-container text-sm leading-relaxed mb-6">
+                        Nhận hoa hồng định kỳ cho mỗi lần khách hàng gia hạn dịch vụ trong những năm tiếp theo. Thu nhập thụ động thực sự.
+                    </p>
+<div class="flex items-center gap-2 text-secondary-fixed font-bold text-xs uppercase">
+<span class="material-symbols-outlined text-sm">autorenew</span>
+                        Thu nhập thụ động
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partner Testimonials -->
+<section class="py-24 bg-surface-container-highest/30">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Chia sẻ từ các Đối tác</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Testimonial 1 -->
+<div class="bg-surface p-10 rounded-2xl ambient-shadow relative overflow-hidden group">
+<span class="absolute top-4 right-8 text-8xl text-outline-variant/20 font-serif leading-none select-none">“</span>
+<div class="relative z-10">
+<p class="text-lg text-on-surface font-medium leading-relaxed mb-8">
+                            "DoSheet là công cụ tuyệt vời giúp khách hàng của tôi tối ưu quy trình mà không tốn kém. Việc giới thiệu một sản phẩm tốt như vậy khiến uy tín của tôi cũng tăng lên."
+                        </p>
+<div class="flex items-center gap-4">
+<img alt="Partner Nguyễn Văn A" class="w-14 h-14 rounded-full object-cover" data-alt="Close-up portrait of a professional male consultant in a business suit with a friendly and confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm62gwq8onyEpfBrDDcrZHSn1DI39TW-AsftoJMY1BKipxdg7CAU0soXbxsP5iK-a2GbWrp8x9VyxoE50DnqbE8sdMLhQ1Wmye8sLiWCk77D4ypMazjIwBDqt_jpElSKT4mwxVvYWdAN8FzxaQdHxa86eJpccexwyblYP2OtVPTDI3vUzyGg5eOLpvuYu2JVs7Bo-fsFDLjtLUcOYjqkNFiPtLu9RMcKkxARld2BuR21jxgpsBNc2-rBzLj3mmrR78Vq8ehkQ-tg"/>
+<div>
+<div class="font-bold text-primary-container">Nguyễn Văn A</div>
+<div class="text-sm text-on-surface-variant">Business Consultant</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface p-10 rounded-2xl ambient-shadow relative overflow-hidden group">
+<span class="absolute top-4 right-8 text-8xl text-outline-variant/20 font-serif leading-none select-none">“</span>
+<div class="relative z-10">
+<p class="text-lg text-on-surface font-medium leading-relaxed mb-8">
+                            "Tôi đã tham gia nhiều chương trình affiliate nhưng DoSheet thực sự khác biệt ở tỷ lệ hoa hồng và sự hỗ trợ nhiệt tình dành cho đối tác. Thu nhập hàng tháng rất ổn định."
+                        </p>
+<div class="flex items-center gap-4">
+<img alt="Partner Trần Thị B" class="w-14 h-14 rounded-full object-cover" data-alt="Professional woman in business casual attire smiling warmly towards the camera in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnvX7tI7pWv4aqlvf7k4oo5E97d80cf1YwdttCUx0FONteHUEzID3lszpmJjxd10bKVVrkkniICIBR-9ceVXE5gwDKGPGom8jLKmJNXGK7dAhdliSBLKkaf1YPJST4l0qRauGMpeb_zMh_AiIPi01zQLoZ84Adnob0pD7yaXP8KsV4akY3lB7tWn1_WMyf5urE2sfEd8v0bUSyMXfo7zIyeYg3elhEjaixDf-MOBbIUV10s5mptYCZ7dIAEFaxvmJHD8ZsBWsjtw"/>
+<div>
+<div class="font-bold text-primary-container">Trần Thị B</div>
+<div class="text-sm text-on-surface-variant">Digital Marketer</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-24 px-8">
+<div class="max-w-5xl mx-auto signature-gradient rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-fixed/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary-fixed/5 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+<div class="relative z-10 space-y-8">
+<h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Sẵn sàng để bắt đầu hành trình cùng DoSheet?</h2>
+<p class="text-on-primary-container text-lg max-w-2xl mx-auto">
+                    Đăng ký hoàn toàn miễn phí. Bắt đầu kiếm thu nhập từ hôm nay và cùng chúng tôi thay đổi cách các SME vận hành dữ liệu.
+                </p>
+<div class="pt-4">
+<button class="bg-secondary-container text-on-secondary-container px-12 py-5 rounded-xl font-extrabold text-xl hover:scale-105 transition-transform ambient-shadow">
+                        Tham gia ngay bây giờ
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full py-12 bg-slate-50 dark:bg-slate-950 font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4">DoSheet</div>
+<p class="text-slate-500 dark:text-slate-400">© 2024 DoSheet. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline underline-offset-4 transition-all duration-200" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline underline-offset-4 transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline underline-offset-4 transition-all duration-200" href="#">Contact Us</a>
+<a class="text-yellow-600 dark:text-yellow-400 hover:text-slate-900 dark:hover:text-slate-100 underline underline-offset-4 transition-all duration-200" href="affiliate.html">Affiliate Program</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#705d00",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#000201",
+                    "surface-container-high": "#ebe7e9",
+                    "tertiary-fixed": "#82faab",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "primary-container": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fcd400",
+                    "on-surface-variant": "#47464c",
+                    "on-background": "#1c1b1d",
+                    "surface-container": "#f1edef",
+                    "on-secondary-fixed": "#221b00",
+                    "tertiary-container": "#00220e",
+                    "primary-fixed": "#e2e0fc",
+                    "error": "#ba1a1a",
+                    "primary": "#00000b",
+                    "on-primary-fixed-variant": "#45455b",
+                    "secondary-fixed-dim": "#e9c400",
+                    "inverse-primary": "#c6c4df",
+                    "surface-bright": "#fcf8fa",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-tertiary-container": "#009854",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6e5c00",
+                    "on-primary-container": "#83829b",
+                    "inverse-on-surface": "#f4f0f2",
+                    "outline-variant": "#c8c5cd",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-dim": "#ddd9db",
+                    "on-surface": "#1c1b1d",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf8fa",
+                    "outline": "#78767d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f2f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tonal-depth-shift { transition: background-color 0.3s ease; }
+    </style>
+</head>
+<body class="bg-surface text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<a href="index.html" style="text-decoration:none;color:inherit"><div class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white font-['Plus_Jakarta_Sans']">DoSheet</div></a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors font-medium" href="index.html">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors font-medium" href="index.html">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors font-medium" href="index.html">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors font-medium" href="index.html">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 text-slate-600 dark:text-slate-400 font-semibold hover:text-blue-950 transition-colors">Login</button>
+<button class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-lg font-bold shadow-lg hover:scale-95 transition-transform duration-200">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="py-16 md:py-24 max-w-4xl">
+<div class="inline-block px-3 py-1 mb-6 bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase rounded-sm">
+                Blog &amp; Insights
+            </div>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-primary-container mb-8 leading-[1.1]">
+                Kinh nghiệm quản lý SME &amp; <span class="text-secondary">Tự động hóa</span> Google Sheets
+            </h1>
+<p class="text-lg text-on-surface-variant max-w-2xl font-medium">
+                Khám phá các giải pháp quản trị doanh nghiệp hiện đại, tinh gọn và hiệu quả được xây dựng trên nền tảng dữ liệu Google Sheets.
+            </p>
+</header>
+<!-- Categories & Filter -->
+<section class="flex flex-wrap gap-3 mb-16 items-center">
+<span class="text-label-md font-bold uppercase tracking-widest mr-4 text-on-surface-variant">Danh mục:</span>
+<button class="px-6 py-2 bg-primary-container text-on-primary rounded-full font-semibold">Tất cả</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold transition-all">Tự động hóa</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold transition-all">Quản trị SME</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold transition-all">AI Business</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold transition-all">Hướng dẫn</button>
+</section>
+<!-- Featured Post: Editorial Layout -->
+<section class="mb-24">
+<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low grid grid-cols-1 md:grid-cols-12 items-stretch min-h-[480px]">
+<div class="md:col-span-7 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern architectural office interior with bright windows and sleek desks showing data visualizations on screens in a clean minimal style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSieYe4k-6HT5u7LQRnKRRDz8Pi6wQW5cfsDykc5M5Xvt1JVKtxo7qqWMFhIauht6EUXS5Hfc13ecIc5SM0BXDricEhHSjSu1xoEoJpmWkQXra7oLOpZidCJWR9k-8tzt8I8q96Im0WoQKfOr5QNbKgvt0TWTErcUgp6ilR0OpnC2h71o29jj8EfZ815e6eZ64ADwvO025lm7G43G0TPwgtDH9L4RByxWsiOJdvYz_BR0b3XLYj1Cn1lMek0du0MYMIO1c59vO0g"/>
+<div class="absolute inset-0 bg-primary-container/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="md:col-span-5 p-8 md:p-12 flex flex-col justify-center bg-surface-container-lowest">
+<div class="flex items-center gap-2 mb-6 text-secondary font-bold text-sm tracking-wide">
+<span class="material-symbols-outlined text-base">star</span>
+                        BÀI VIẾT NỔI BẬT
+                    </div>
+<h2 class="text-3xl font-extrabold text-primary-container mb-6 leading-tight group-hover:text-secondary transition-colors">
+                        5 cách tối ưu chi phí nhân sự bằng Google Sheets
+                    </h2>
+<p class="text-on-surface-variant mb-8 line-clamp-3">
+                        Tự động hóa bảng lương, quản lý hiệu suất và quy trình tuyển dụng mà không cần đầu tư vào phần mềm HRM đắt tiền. Hướng dẫn chi tiết cho chủ doanh nghiệp SME.
+                    </p>
+<div class="flex items-center justify-between mt-auto pt-8 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container font-bold text-xs">DS</div>
+<span class="text-sm font-bold text-primary-container">DoSheet Editorial</span>
+</div>
+<span class="text-sm text-on-primary-container">12 Th05, 2024</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Grid: Bento Style -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<!-- Card 1 -->
+<article class="flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:shadow-[0_20px_40px_rgba(26,26,46,0.06)] transition-all group">
+<div class="aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic abstract AI visualization with glowing blue and white neural network patterns on a dark navy background minimal aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYoqa6uQuEtt-QsHnBUZ24_1UV_JXitLnK9fdMCmzIXam9xXNfNBi60nFajTgnSG5Af9Cv_Vfus7zzc1sGAkJ5aQ1d2Om7aPsaHok-kQzbBLjwBRMMZJMFiRkiWczz1j1EZHVbcmNTVtEkvWe28i3D7H7kSKioKst2ce4VX_W-XkeMj4KKh-R-O1VS3s9zN2OYQo4wG8QWrbVeI6i1npy4uM8pPeVM-TgLf2_Wki30qHS-sBMoz2hAoaq8uxZAhGEw2ANNH2zXRQ"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="text-xs font-bold text-on-tertiary-container uppercase tracking-widest mb-4">AI Business</span>
+<h3 class="text-xl font-bold text-primary-container mb-4 leading-snug group-hover:text-secondary transition-colors">
+                        AI trong quản lý: Xu hướng hay thực tế?
+                    </h3>
+<p class="text-sm text-on-surface-variant mb-6 flex-grow">
+                        Phân tích sâu về khả năng tích hợp AI vào bảng tính Google để dự báo tài chính và tự động hóa báo cáo.
+                    </p>
+<div class="flex items-center gap-2 text-sm font-bold text-primary-container group-hover:translate-x-2 transition-transform">
+                        Đọc tiếp <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:shadow-[0_20px_40px_rgba(26,26,46,0.06)] transition-all group">
+<div class="aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a high-end laptop screen displaying complex financial spreadsheets and clean charts with gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_pp4-Or1t2j6MEDSIDiASyXlckh-6zW_gujsToM-xJfAnxkO-j-QLEC1Ysvj4R9x9CMAlZ3VkPCNuBPaSZhbpohDpog2iTGC5bT6yd592CD0bzWJIqRW3Bgz5F06kxQ2ALNoxFUxl72_nOyLPEMQgXovYRFX704OHaE8BC1d5FQkR8KHsCjuhAgJGw5SK8eyq20-EMAMut0aqdRjWxybT_ULKIaStLvNzmdRnwJCs7pEL4V2VDLcj6GM7wLr-7dkTWBQyFxypZQ"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="text-xs font-bold text-on-tertiary-container uppercase tracking-widest mb-4">Hướng dẫn</span>
+<h3 class="text-xl font-bold text-primary-container mb-4 leading-snug group-hover:text-secondary transition-colors">
+                        Hướng dẫn setup DoSheet cho doanh nghiệp mới
+                    </h3>
+<p class="text-sm text-on-surface-variant mb-6 flex-grow">
+                        Quy trình 5 bước để triển khai hệ thống quản trị dữ liệu tập trung chỉ trong một buổi làm việc.
+                    </p>
+<div class="flex items-center gap-2 text-sm font-bold text-primary-container group-hover:translate-x-2 transition-transform">
+                        Đọc tiếp <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="flex flex-col bg-surface-container-low rounded-xl overflow-hidden hover:shadow-[0_20px_40px_rgba(26,26,46,0.06)] transition-all group">
+<div class="aspect-[16/10] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean server room with soft blue lighting and glowing indicators representing secure cloud data storage and reliability" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWYyifxfAbXBGPs-HN5N3uBWH8FvtE8wUgV6tK8ccraHVRU8MJOswLbzd8FmPaiV1E3OP5qiODolez1rwiNlon6lcKJN12Apogeg6gj6FAq8JmrEdNZLgLbLzQHgIB3_QsobelIUZp8MrndLK99mi60_KYw-lvreHLfa-TUYVAuRzrnOwA5m6w6gJvAH7sGmtzciJ5EORGx2b3JZvqXeLSsFpWmQUn2hfI-6kZCtciL_zJNi9IS81nS6iA7TovaxI9wK_f7YqOCg"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<span class="text-xs font-bold text-on-tertiary-container uppercase tracking-widest mb-4">Quản trị SME</span>
+<h3 class="text-xl font-bold text-primary-container mb-4 leading-snug group-hover:text-secondary transition-colors">
+                        Tại sao SME Việt nên dùng Google Drive để lưu dữ liệu
+                    </h3>
+<p class="text-sm text-on-surface-variant mb-6 flex-grow">
+                        Bảo mật, chi phí và khả năng mở rộng - Tại sao Cloud storage là lựa chọn sống còn cho doanh nghiệp nhỏ.
+                    </p>
+<div class="flex items-center gap-2 text-sm font-bold text-primary-container group-hover:translate-x-2 transition-transform">
+                        Đọc tiếp <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Newsletter Signup: Asymmetric Layout -->
+<section class="bg-primary-container rounded-3xl p-8 md:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-secondary opacity-10 blur-[120px]"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">
+                        Nhận bí quyết quản trị SME hàng tuần.
+                    </h2>
+<p class="text-on-primary-container text-lg">
+                        Tham gia cùng +500 chủ doanh nghiệp đang tối ưu hóa vận hành mỗi ngày cùng DoSheet. Không spam, chỉ có kiến thức thực chiến.
+                    </p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row gap-3">
+<input class="flex-grow bg-white/10 border border-white/20 rounded-lg px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-secondary-container transition-all" placeholder="Email của bạn..." type="email"/>
+<button class="bg-secondary-container text-on-secondary-container font-bold px-8 py-4 rounded-lg hover:scale-95 transition-transform">Đăng ký ngay</button>
+</div>
+<p class="text-xs text-white/40 italic">
+                        Bằng cách đăng ký, bạn đồng ý với Chính sách bảo mật của chúng tôi.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full py-12 px-6 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div>
+<div class="text-lg font-bold text-blue-950 dark:text-white mb-4">DoSheet</div>
+<p class="text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] text-sm leading-relaxed max-w-sm">
+                    © 2024 DoSheet. Precision-crafted for architectural business management. Giải pháp quản trị doanh nghiệp tối giản trên nền tảng Google Sheets.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all text-sm" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all text-sm" href="help-center.html">Contact Support</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all text-sm" href="#">API Documentation</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

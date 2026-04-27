@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DoSheet | Architectural Ledger Access</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "primary-fixed": "#e2e0fc",
+                    "outline": "#78767d",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-container": "#6e5c00",
+                    "secondary-fixed": "#ffe16d",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcf8fa",
+                    "tertiary": "#000201",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#544600",
+                    "surface-dim": "#ddd9db",
+                    "on-primary-fixed-variant": "#45455b",
+                    "background": "#fcf8fa",
+                    "surface-tint": "#5d5c74",
+                    "inverse-primary": "#c6c4df",
+                    "surface-container-high": "#ebe7e9",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#e9c400",
+                    "tertiary-container": "#00220e",
+                    "secondary": "#705d00",
+                    "on-tertiary-container": "#009854",
+                    "secondary-container": "#fcd400",
+                    "primary": "#00000b",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-secondary-fixed": "#221b00",
+                    "primary-fixed-dim": "#c6c4df",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-fixed": "#82faab",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "on-surface": "#1c1b1d",
+                    "primary-container": "#1a1a2e",
+                    "inverse-on-surface": "#f4f0f2",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container": "#f1edef",
+                    "on-primary-container": "#83829b",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-background": "#1c1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+        .glass-overlay {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-blur: 8px;
+        }
+        .ghost-border {
+            border: 1px solid rgba(200, 197, 205, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex items-stretch">
+<!-- Left Side: Architectural Imagery -->
+<section class="hidden lg:flex w-1/2 relative overflow-hidden">
+<img alt="Architectural Ledger Environment" class="absolute inset-0 w-full h-full object-cover" data-alt="overhead view of architect desk with blueprints, gold mechanical pencil, and high-end laptop displaying a precise data ledger in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZT1HYUtewVvTFgu2oWUy8ZBmdOCHCMdLT71lqYkchwG7_QDK4eo-yPzehCWTzhy8xm0Stc9hY-RBOMdZ_T71t3Qg5YC_tOvnSiekksWggGGfdRQu7QF9axT6yCG6TcaJRcQxEaYJrlpYNKK2PTaBacJuui0pP_15Xh6ZsdxgmXL2_XRDcRjzTBcmE3o4UR-m05aFEg4cQYXxVJ3Xy-hA60IQb3rnCAGncLmAbJRTphWv89hOR7hO_5NZDHd2j7ZIoqI3CePB03g"/>
+<div class="absolute inset-0 signature-gradient opacity-40"></div>
+<!-- Branding Overlap -->
+<div class="relative z-10 p-16 flex flex-col justify-between h-full w-full">
+<div class="flex items-center gap-3">
+<span class="text-3xl font-bold tracking-tighter text-white">DoSheet</span>
+</div>
+<div class="max-w-md">
+<p class="text-secondary-fixed font-label text-xs uppercase tracking-widest mb-4">Precision Engineering</p>
+<h1 class="text-white text-5xl font-headline font-extrabold tracking-tight leading-tight mb-6">
+                    The Modern Standard for <span class="text-secondary-fixed">Architectural</span> Data.
+                </h1>
+<div class="h-1 w-24 bg-secondary-fixed opacity-60"></div>
+</div>
+<div class="flex gap-8 text-white/60 text-xs font-label uppercase tracking-widest">
+<span>London</span>
+<span>Singapore</span>
+<span>New York</span>
+</div>
+</div>
+</section>
+<!-- Right Side: Authentication Form -->
+<main class="w-full lg:w-1/2 bg-surface-container-lowest flex flex-col justify-center items-center px-6 md:px-24 py-12">
+<div class="w-full max-w-sm">
+<!-- Header -->
+<div class="mb-10">
+<div class="lg:hidden flex items-center gap-2 mb-8">
+<span class="text-2xl font-bold tracking-tighter text-on-primary-fixed">DoSheet</span>
+</div>
+<h2 class="text-primary-container text-3xl font-headline font-bold mb-2">Welcome Back</h2>
+<p class="text-on-surface-variant font-body text-sm">Enter your credentials to access your secure architectural ledger.</p>
+</div>
+<!-- Toggle Control -->
+<div class="flex bg-surface-container-low rounded-xl p-1 mb-8 ghost-border">
+<button class="flex-1 py-2 text-xs font-label uppercase tracking-wider font-bold bg-surface-container-lowest text-primary-container rounded-lg shadow-sm">Login</button>
+<button class="flex-1 py-2 text-xs font-label uppercase tracking-wider font-medium text-on-surface-variant hover:text-primary-container transition-colors">Sign Up</button>
+</div>
+<!-- Social Provider -->
+<button class="w-full flex items-center justify-center gap-3 py-3.5 bg-secondary-container hover:bg-secondary-fixed transition-all duration-300 rounded-lg text-on-secondary-container font-headline font-bold text-sm shadow-[0_4px_12px_rgba(252,212,0,0.2)]">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path>
+</svg>
+                Continue with Google
+            </button>
+<div class="flex items-center gap-4 my-8">
+<div class="h-[1px] flex-1 bg-outline-variant opacity-30"></div>
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-outline">OR EMAIL</span>
+<div class="h-[1px] flex-1 bg-outline-variant opacity-30"></div>
+</div>
+<!-- Form -->
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] font-label uppercase tracking-widest text-outline mb-2 ml-1">Work Email</label>
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container rounded-lg px-4 py-3.5 text-sm font-body text-primary-container placeholder:text-outline-variant" placeholder="name@firm.com" type="email"/>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2 ml-1">
+<label class="text-[10px] font-label uppercase tracking-widest text-outline">Security Code</label>
+<a class="text-[10px] font-label uppercase tracking-widest text-secondary hover:text-on-secondary-container transition-colors" href="#">Forgot?</a>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary-container rounded-lg px-4 py-3.5 text-sm font-body text-primary-container placeholder:text-outline-variant" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant cursor-pointer text-lg" data-icon="visibility">visibility</span>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2">
+<input class="w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container bg-surface-container-highest" id="remember" type="checkbox"/>
+<label class="text-xs font-body text-on-surface-variant" for="remember">Remember this workstation</label>
+</div>
+<button class="w-full py-4 signature-gradient text-white rounded-lg font-headline font-bold text-sm tracking-tight shadow-[0_20px_40px_rgba(26,26,46,0.15)] hover:scale-[1.01] active:scale-[0.98] transition-all" type="submit">
+                    Sign in to Ledger
+                </button>
+</form>
+<footer class="mt-12 pt-8 border-t border-surface-container-low text-center">
+<p class="text-[10px] font-label uppercase tracking-[0.15em] text-outline leading-relaxed">
+                    © 2024 DoSheet Architectural Ledger.<br/>
+<span class="opacity-60">Authorized Access Only. All transactions recorded.</span>
+</p>
+<div class="mt-4 flex justify-center gap-4 text-[10px] font-label uppercase tracking-widest text-primary-container/40">
+<a class="hover:text-primary-container" href="#">Privacy</a>
+<a class="hover:text-primary-container" href="#">Terms</a>
+<a class="hover:text-primary-container" href="help-center.html">Help</a>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

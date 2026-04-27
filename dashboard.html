@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard | DoSheet Architectural Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e5e1e3",
+                    "primary-fixed": "#e2e0fc",
+                    "outline": "#78767d",
+                    "outline-variant": "#c8c5cd",
+                    "on-secondary-container": "#6e5c00",
+                    "secondary-fixed": "#ffe16d",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fcf8fa",
+                    "tertiary": "#000201",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#544600",
+                    "surface-dim": "#ddd9db",
+                    "on-primary-fixed-variant": "#45455b",
+                    "background": "#fcf8fa",
+                    "surface-tint": "#5d5c74",
+                    "inverse-primary": "#c6c4df",
+                    "surface-container-high": "#ebe7e9",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#313032",
+                    "secondary-fixed-dim": "#e9c400",
+                    "tertiary-container": "#00220e",
+                    "secondary": "#705d00",
+                    "on-tertiary-container": "#009854",
+                    "secondary-container": "#fcd400",
+                    "primary": "#00000b",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-secondary-fixed": "#221b00",
+                    "primary-fixed-dim": "#c6c4df",
+                    "surface-container-low": "#f6f2f4",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-surface-variant": "#47464c",
+                    "tertiary-fixed": "#82faab",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "on-surface": "#1c1b1d",
+                    "primary-container": "#1a1a2e",
+                    "inverse-on-surface": "#f4f0f2",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container": "#f1edef",
+                    "on-primary-container": "#83829b",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-background": "#1c1b1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .architectural-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/85 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white">DoSheet</span>
+<div class="hidden md:flex gap-6">
+<a class="text-blue-950 dark:text-yellow-400 font-bold border-b-2 border-yellow-500 pb-1 font-plus-jakarta text-sm tracking-tight" href="dashboard.html">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-yellow-200 transition-all duration-300 font-plus-jakarta text-sm font-medium tracking-tight" href="dashboard.html">Analytics</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-yellow-200 transition-all duration-300 font-plus-jakarta text-sm font-medium tracking-tight" href="#">Team</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-yellow-200 transition-all duration-300 font-plus-jakarta text-sm font-medium tracking-tight" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border-none rounded-full px-6 py-2 text-sm focus:ring-2 focus:ring-secondary min-w-[280px]" placeholder="Search architectural ledger..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-slate-100/50 p-2 rounded-full transition-all" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-slate-100/50 p-2 rounded-full transition-all" data-icon="account_circle">account_circle</button>
+<button class="architectural-gradient text-white px-6 py-2 rounded-lg text-sm font-bold scale-95 active:opacity-80 transition-transform">Add to Sheet</button>
+</div>
+</div>
+</nav>
+<div class="pt-24 min-h-screen flex flex-col md:flex-row gap-0">
+<aside class="w-full md:w-64 bg-surface-container-low shrink-0 md:h-[calc(100vh-6rem)] md:sticky md:top-24 p-6 flex flex-col gap-8">
+<div class="space-y-1">
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-4 px-3">Navigation</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-sm">My Tools</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="history">history</span>
+<span class="text-sm">Order History</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="payments">payments</span>
+<span class="text-sm">Affiliate Earnings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="text-sm">Profile</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-4 architectural-gradient rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-white/60 text-[10px] uppercase tracking-widest font-bold">Storage Plan</p>
+<p class="text-white text-lg font-bold mt-1">Professional</p>
+<div class="w-full bg-white/20 h-1 rounded-full mt-4">
+<div class="bg-secondary-fixed w-[72%] h-full rounded-full shadow-[0_0_10px_#ffe16d]"></div>
+</div>
+<p class="text-white/70 text-xs mt-2">7.2 GB of 10 GB used</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-8xl" data-icon="architecture">architecture</span>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 bg-surface">
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold tracking-tighter text-primary-container leading-none">Architectural Tools</h1>
+<div class="mt-2 flex items-center gap-4 text-on-surface-variant">
+<span class="text-sm font-medium">Precision Management Ledger</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium">3 Active Modules</span>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)] border-b-4 border-secondary-fixed transition-transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 architectural-gradient rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl" data-icon="event_available">event_available</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Verified</span>
+</div>
+<h3 class="text-xl font-bold text-primary-container mb-2">Attendance Sheet</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Professional tracking for multi-shift teams with automated diacritic support for Vietnamese names.</p>
+<div class="flex items-center gap-4">
+<button class="flex-1 architectural-gradient text-white py-3 rounded font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all">Open Sheet</button>
+<a class="flex items-center justify-center w-12 h-12 bg-surface-container-high rounded text-primary-container hover:bg-secondary-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)] border-b-4 border-primary-container transition-transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-secondary-fixed rounded-xl flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-3xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">V.2.4</span>
+</div>
+<h3 class="text-xl font-bold text-primary-container mb-2">Cashflow Ledger</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Real-time revenue architecture with high-precision forecasting and expense categorization.</p>
+<div class="flex items-center gap-4">
+<button class="flex-1 architectural-gradient text-white py-3 rounded font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all">Open Sheet</button>
+<a class="flex items-center justify-center w-12 h-12 bg-surface-container-high rounded text-primary-container hover:bg-secondary-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)] border-b-4 border-secondary-fixed transition-transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 architectural-gradient rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl" data-icon="groups">groups</span>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Premium</span>
+</div>
+<h3 class="text-xl font-bold text-primary-container mb-2">Enterprise CRM</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Structural client relationship mapping with integrated architectural milestones and billing.</p>
+<div class="flex items-center gap-4">
+<button class="flex-1 architectural-gradient text-white py-3 rounded font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all">Open Sheet</button>
+<a class="flex items-center justify-center w-12 h-12 bg-surface-container-high rounded text-primary-container hover:bg-secondary-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-2 xl:col-span-3 bg-surface-container-low rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="md:w-1/3 bg-primary-container p-10 flex flex-col justify-center text-white relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-white/10 text-9xl" data-icon="layers">layers</span>
+</div>
+<h4 class="text-2xl font-black mb-2 leading-tight">Request Custom Build</h4>
+<p class="text-white/70 text-sm mb-6">Need a custom architectural ledger for your specific business requirements? Our engineers are ready.</p>
+<button class="w-fit bg-secondary-fixed text-on-secondary-fixed px-6 py-2.5 rounded-lg font-bold text-sm">Consultation</button>
+</div>
+<div class="flex-1 p-10 bg-white grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center">
+<p class="text-3xl font-black text-primary-container">48h</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-2">SLA Delivery</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-black text-primary-container">100%</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-2">Data Integrity</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-black text-primary-container">Google</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-2">Native Engine</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-black text-primary-container">Flat</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mt-2">Pricing Structure</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<aside class="w-full md:w-80 bg-surface shrink-0 p-8 flex flex-col gap-10">
+<div>
+<h4 class="text-sm font-black text-primary-container uppercase tracking-widest mb-6 flex items-center gap-2">
+<span class="w-2 h-4 bg-secondary inline-block"></span>
+                    AI Advisor Summary
+                </h4>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-secondary relative">
+<p class="text-sm text-on-surface-variant leading-relaxed italic">
+                        "Efficiency is up by 12% this week. Your Cashflow Ledger suggests a potential surplus in Q3. Consider reallocating $4,200 to secondary marketing tools."
+                    </p>
+<div class="mt-4 flex items-center justify-end">
+<span class="text-[10px] font-bold text-secondary uppercase">Ledger Intelligence • Oct 24</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-black text-primary-container uppercase tracking-widest mb-6 flex items-center gap-2">
+<span class="w-2 h-4 bg-primary inline-block"></span>
+                    Recent Activity
+                </h4>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed mt-1.5 shrink-0 shadow-[0_0_8px_#82faab]"></div>
+<div>
+<p class="text-sm font-bold text-primary-container">Attendance Sync Complete</p>
+<p class="text-xs text-on-surface-variant">22 entries updated 5 mins ago</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed mt-1.5 shrink-0 shadow-[0_0_8px_#ffe16d]"></div>
+<div>
+<p class="text-sm font-bold text-primary-container">CRM Record Exported</p>
+<p class="text-xs text-on-surface-variant">Project: "Skyline Park" • 2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-outline-variant mt-1.5 shrink-0"></div>
+<div>
+<p class="text-sm font-bold text-primary-container">Login from New Device</p>
+<p class="text-xs text-on-surface-variant">MacBook Pro • Ho Chi Minh City</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto overflow-hidden rounded-xl h-48 relative">
+<img alt="Architecture" class="w-full h-full object-cover grayscale brightness-50" data-alt="Modern architectural glass building reflecting a clear sky at dusk with sophisticated sharp geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZGQAZ8laXegnYug8ZtZSgJPp4wvPS9h93DaWQUi-dzPxynmjMaEZLEnwP01gxFPGZWlSo34w1o5Ri6lPo2GCY5-W-XkqW25bMihhEXfewOxn5ic4LmxEqk5Z4bJhkFC58KZCPkSPmdsHLuQVvWv-flRx-NDnuQjzrmw3a4v3ZKsQdZL2yIGyPT_GlFXbHlAk2Jzo8ErUYpfAUo3spj9nn2tXnK-O5CVw0h5dRhe7ane0ty-NxSY-SVlkQzRw0GZi_aN5T5qU5dQ"/>
+<div class="absolute inset-0 bg-primary-container/40 p-6 flex flex-col justify-end">
+<p class="text-white text-xs font-bold uppercase tracking-widest">Global Index</p>
+<p class="text-secondary-fixed text-xl font-black tracking-tighter">+4.82%</p>
+</div>
+</div>
+</aside>
+</div>
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-black text-blue-950 dark:text-white">DoSheet</span>
+<p class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500">© 2024 DoSheet Architectural Ledger. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Privacy Policy</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Terms of Service</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors font-bold" href="#">Architecture</a>
+<a class="font-plus-jakarta text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-blue-800 dark:hover:text-yellow-300 transition-colors" href="#">Support</a>
+</div>
+</footer>
+</body></html>

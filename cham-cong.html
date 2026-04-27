@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quản lý Chấm Công Tính Lương - DoSheet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#705d00",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#000201",
+                    "surface-container-high": "#ebe7e9",
+                    "tertiary-fixed": "#82faab",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "primary-container": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fcd400",
+                    "on-surface-variant": "#47464c",
+                    "on-background": "#1c1b1d",
+                    "surface-container": "#f1edef",
+                    "on-secondary-fixed": "#221b00",
+                    "tertiary-container": "#00220e",
+                    "primary-fixed": "#e2e0fc",
+                    "error": "#ba1a1a",
+                    "primary": "#00000b",
+                    "on-primary-fixed-variant": "#45455b",
+                    "secondary-fixed-dim": "#e9c400",
+                    "inverse-primary": "#c6c4df",
+                    "surface-bright": "#fcf8fa",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-tertiary-container": "#009854",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6e5c00",
+                    "on-primary-container": "#83829b",
+                    "inverse-on-surface": "#f4f0f2",
+                    "outline-variant": "#c8c5cd",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-dim": "#ddd9db",
+                    "on-surface": "#1c1b1d",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf8fa",
+                    "outline": "#78767d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f2f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+        .tonal-depth-shift {
+            background: rgba(252, 248, 250, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] tracking-tight">
+<a href="index.html" style="text-decoration:none;color:inherit"><div class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white">DoSheet</div></a>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 transition-colors" href="index.html">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 transition-colors" href="index.html">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 transition-colors" href="index.html">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 transition-colors" href="index.html">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 dark:text-slate-400 font-medium px-4 py-2">Login</button>
+<button class="signature-gradient text-on-primary px-6 py-2.5 rounded-xl font-semibold scale-95 duration-200 ease-in-out hover:scale-100 shadow-lg">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 max-w-7xl mx-auto px-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-sm font-label tracking-wide uppercase text-on-surface-variant">
+<span>Sản phẩm</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Nhân sự</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Quản lý Chấm Công</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Visuals -->
+<div class="lg:col-span-7 space-y-8">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(26,26,46,0.06)] group">
+<img alt="Attendance Sheet Mockup" class="w-full h-auto aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.02]" data-alt="Professional enterprise dashboard on a computer screen showing clean Google Sheets attendance tracking with colorful status indicators and charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS5ZdYhNidmTuUwgN7oiOQaVFD3aF0NNWv-EiU7HhTjf9A2hpzsVEolcbtSJFv9-K__3JaFSTryW0HYLFixzY5AePrIBFxA-7CoYHK5_OC1qO1XT3cTD2I8F1VhyoknAtEofHTKcJbDjZxLFCXTJeytibkNczBhbS6byHfFOSvaBqKbBBdcOpIq22BEjxVeoZR-RjLouJFU5AMB795t5GWLas0cqKrllVKKf3mQzSy4nem9ASoJusTvUrcVlkfonDB_MDboS0u3g"/>
+<div class="absolute inset-0 bg-primary-container/5 pointer-events-none"></div>
+</div>
+<!-- Secondary Visuals / Highlights -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-sm font-bold text-on-surface tracking-tight">Data Verified</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Tất cả công thức được kiểm định độ chính xác 100% theo quy định luật lao động hiện hành.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">speed</span>
+<span class="text-sm font-bold text-on-surface tracking-tight">Hiệu năng cao</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">Tối ưu hóa tốc độ xử lý cho tệp dữ liệu lên đến 1.000 nhân sự mà không giật lag.</p>
+</div>
+</div>
+</div>
+<!-- Right: Product Details -->
+<div class="lg:col-span-5 space-y-10 sticky top-28">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="flex text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="text-sm font-medium text-on-surface-variant">4.8/5 (214 đánh giá)</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold tracking-tighter text-primary-container font-headline leading-tight">
+                        Quản lý Chấm Công <br/> <span class="text-secondary">Tính Lương</span>
+</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        Tự động hóa bảng lương, quản lý nghỉ phép và ca làm việc ngay trên nền tảng Google Sheets quen thuộc của bạn.
+                    </p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl space-y-6">
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-extrabold text-primary-container tracking-tighter">239.000đ</span>
+<span class="text-on-surface-variant font-medium">/ Thanh toán một lần</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mt-0.5">check_circle</span>
+<span class="text-on-surface">Tự động tính lương theo công thức tùy chỉnh</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mt-0.5">check_circle</span>
+<span class="text-on-surface">Xuất phiếu lương tự động qua Zalo/Email</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mt-0.5">check_circle</span>
+<span class="text-on-surface">Quản lý tăng ca, nghỉ phép &amp; ca làm việc phức tạp</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim mt-0.5">check_circle</span>
+<span class="text-on-surface">Báo cáo chi tiết chi phí nhân sự &amp; biến động công</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+<button class="bg-secondary-container text-on-secondary-container font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 hover:brightness-105 transition-all shadow-md">
+<span class="material-symbols-outlined">shopping_bag</span>
+                            Mua ngay
+                        </button>
+<button class="bg-surface-container-highest text-on-surface-variant font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+<!-- Add-on Section (Mua kèm) -->
+<div class="border-2 border-dashed border-outline-variant/30 p-6 rounded-xl bg-white/40">
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">workspace_premium</span>
+                        Đề xuất mua kèm
+                    </h3>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-primary-container rounded-lg flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-on-surface leading-tight">AI Advisor Add-on</h4>
+<p class="text-xs text-on-surface-variant">Phân tích xu hướng nhân sự bằng AI</p>
+<div class="mt-1 font-bold text-primary-container">+ 99.000đ</div>
+</div>
+<button class="bg-outline-variant/20 hover:bg-outline-variant/40 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Feature Grid (Bento Style) -->
+<section class="mt-32 space-y-12">
+<div class="max-w-2xl">
+<h2 class="text-3xl font-bold tracking-tighter text-primary-container mb-4">Tại sao nên chọn DoSheet?</h2>
+<p class="text-on-surface-variant">Hệ thống được thiết kế với tư duy Ledger chuyên nghiệp, giúp bạn quản lý dữ liệu chính xác và linh hoạt nhất.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-low h-80 rounded-2xl p-8 relative overflow-hidden flex flex-col justify-end">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-6xl text-on-primary-container/10">mail_lock</span>
+</div>
+<h3 class="text-2xl font-bold text-primary-container mb-2">Bảo mật tuyệt đối</h3>
+<p class="text-on-surface-variant max-w-sm">Dữ liệu nằm hoàn toàn trên tài khoản Google của bạn. Không ai có quyền truy cập ngoài bạn và nhân sự được cấp phép.</p>
+</div>
+<div class="bg-tertiary-fixed h-80 rounded-2xl p-8 flex flex-col justify-between group cursor-default">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-fixed">monitoring</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-on-tertiary-fixed mb-2">Báo cáo Real-time</h3>
+<p class="text-on-tertiary-fixed-variant text-sm font-medium">Theo dõi biến động chi phí lương ngay khi dữ liệu chấm công được cập nhật.</p>
+</div>
+</div>
+<div class="bg-surface-container-low h-80 rounded-2xl p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl text-secondary">devices</span>
+<div>
+<h3 class="text-xl font-bold text-primary-container mb-2">Đa thiết bị</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Chấm công qua điện thoại, quản lý trên máy tính. Đồng bộ hóa tức thì qua Cloud.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-primary-container h-80 rounded-2xl p-8 relative overflow-hidden group">
+<img alt="Tech background" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-700" data-alt="Modern high-tech workspace with multiple monitors displaying data analytics and code, soft blue atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP4WURV8CkBdtYQbYkzzNQLP6o1zAK_jlMaiJe8ZFKpc2pPFPGUEpcbiFS4J65gz8gjlFRYGKyGdJMeVEhgrak7MZ3dXurHi7ODBJSgB1yxEObLtOD66qEz2y5G3w_eVf-U_iGCMA05bNyYhVpyNfmRaytOQGKeAeYsDuE6kEDj1iitD8JtoEroGhx_RicVqMeOWmYHK42NZJPpr0yZDXULj7Yx4qerTMiZBA3ULI50NiaMQtMqxrrQ_Vgr_f1JNZLIBNmrzukCg"/>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<h3 class="text-2xl font-bold text-white mb-2">Tùy biến không giới hạn</h3>
+<p class="text-on-primary-container text-white/70 max-w-md">Kiến trúc mở cho phép bạn tự thêm các trường dữ liệu, thay đổi công thức tính lương theo đặc thù riêng của doanh nghiệp.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full py-12 px-6 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<div class="space-y-4">
+<div class="text-lg font-bold text-blue-950 dark:text-white">DoSheet</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm">© 2024 DoSheet. Precision-crafted for architectural business management.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-3">
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="space-y-3">
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="help-center.html">Contact Support</a>
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="#">API Documentation</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DoSheet — Phần mềm quản lý trên Google Sheets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "secondary-fixed-dim": "#e9c400",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#009854",
+                    "surface-dim": "#ddd9db",
+                    "on-secondary-fixed": "#221b00",
+                    "outline-variant": "#c8c5cd",
+                    "on-primary-container": "#83829b",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed": "#00210e",
+                    "primary": "#00000b",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fcd400",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-surface-variant": "#47464c",
+                    "background": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "surface-container-low": "#f6f2f4",
+                    "surface-container-high": "#ebe7e9",
+                    "tertiary-fixed": "#82faab",
+                    "on-secondary-container": "#6e5c00",
+                    "surface-container-highest": "#e5e1e3",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#5d5c74",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f4f0f2",
+                    "surface": "#fcf8fa",
+                    "primary-container": "#1a1a2e",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f1edef",
+                    "primary-fixed": "#e2e0fc",
+                    "secondary-fixed": "#ffe16d",
+                    "on-surface": "#1c1b1d",
+                    "on-background": "#1c1b1d",
+                    "on-primary-fixed-variant": "#45455b",
+                    "surface-bright": "#fcf8fa",
+                    "secondary": "#705d00",
+                    "tertiary-container": "#00220e",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#c6c4df",
+                    "on-secondary-fixed-variant": "#544600",
+                    "tertiary": "#000201",
+                    "outline": "#78767d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .glass-nav {
+        background: rgba(252, 248, 250, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .tonal-depth-shift {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .tonal-depth-shift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(26, 26, 46, 0.06);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- 1. STICKY NAVIGATION -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+<div class="text-2xl font-bold tracking-tighter flex items-center">
+<span class="text-primary-container">Do</span><span class="text-secondary">Sheet</span>
+</div>
+<div class="hidden md:flex gap-8 items-center text-sm font-semibold text-slate-600">
+<a class="hover:text-secondary transition-colors" href="#">Sản phẩm</a>
+<a class="hover:text-secondary transition-colors" href="#">AI Cố vấn</a>
+<a class="hover:text-secondary transition-colors" href="#">Bảng giá</a>
+<a class="hover:text-secondary transition-colors" href="blog.html">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-xl font-bold text-sm hover:brightness-105 transition-all shadow-sm">
+                    Dùng thử miễn phí
+                </button>
+</div>
+</div>
+</nav>
+<!-- 2. HERO SECTION -->
+<section class="pt-32 pb-20 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 bg-secondary-container px-4 py-2 rounded-full text-xs font-bold tracking-wide text-on-secondary-container mr-3">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                    Mới: AI Cố vấn doanh nghiệp
+                </div><div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full text-xs font-bold tracking-wide text-on-primary-fixed-variant">
+<span class="w-2 h-2 bg-tertiary-fixed rounded-full animate-pulse"></span>
+                    7 sản phẩm · Từ 39.000đ · Không phí tháng
+                </div>
+<h1 class="text-5xl md:text-6xl font-extrabold text-primary-container leading-[1.1] tracking-tight">Phần mềm quản lý doanh nghiệp — dữ liệu trên <span class="text-secondary-fixed-variant">Google Sheets</span> của bạn</h1>
+<p class="text-lg text-on-surface-variant max-w-lg leading-relaxed">
+                    Mua 1 lần, dùng trọn đời. Dữ liệu lưu trên Drive của bạn — không ai khác truy cập được. Nhận báo cáo AI mỗi tuần nếu muốn.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:scale-[1.02] transition-transform shadow-lg">
+                        Xem 7 sản phẩm <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border-2 border-primary-container text-primary-container px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-low transition-colors">
+                        Tìm hiểu AI Cố vấn
+                    </button>
+</div>
+<div class="grid grid-cols-4 gap-4 pt-8">
+<div>
+<div class="text-2xl font-bold text-primary-container">7</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Sản phẩm</div>
+</div>
+<div>
+<div class="text-2xl font-bold text-primary-container">39K</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Giá từ</div>
+</div>
+<div>
+<div class="text-2xl font-bold text-primary-container">15ph</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Setup</div>
+</div>
+<div>
+<div class="text-2xl font-bold text-primary-container">0đ</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Phí tháng</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden border border-outline-variant/20 p-4">
+<img class="rounded-xl w-full" data-alt="Modern clean software dashboard interface with kanban boards, task lists in Vietnamese, and data charts on a computer screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeN3PZHz48ZVxxn8hMNJ4Mq66Y9_mNHVUBbBFbkqbGn5SDWwydF6gSiXDkHeiJB2hoxFBfhuHq6LzaXCL-xFB4pVRoxV7umj2vCEy0JbkM_IA1ckDMyw-TCERq0ZFXefontoOoiFvqFLJ-kVpShERWMPWvUNiwkwsJYwYsRSkOr77TGAfqSDULh4oQnxqMgyb1I7kURN5th01Sb6jfVvK3bDKIKtfc4AYebVZBiC09wIcQ9ad-nTF-VYq3MXU74ihaHsIBSvTV6Q"/>
+</div>
+<!-- Floating elements -->
+</div>
+</div>
+</section>
+<!-- 3. TRUST BAR -->
+<section class="bg-surface-container-low py-12 px-6">
+<div class="max-w-7xl mx-auto text-center">
+<p class="text-sm font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-8">Đang dùng tại:</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all">
+<span class="text-xl font-bold text-primary-container">Hoàng Đát Cơ Khí</span>
+<span class="text-xl font-bold text-primary-container italic">Teky Edtech</span>
+<span class="text-xl font-bold text-primary-container">Quán cà phê Mây</span>
+<span class="text-xl font-bold text-primary-container">Văn phòng Minh Long</span>
+</div>
+</div>
+</section>
+<!-- 4. PRODUCT CATALOG -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+<div>
+<h2 class="text-3xl font-extrabold text-primary-container tracking-tight">3 tầng giá — chọn đúng giai đoạn của bạn</h2>
+</div>
+<div class="flex gap-2 p-1 bg-surface-container-high rounded-xl overflow-x-auto max-w-full">
+<button class="px-4 py-2 rounded-lg text-sm font-bold bg-primary-container text-white whitespace-nowrap">Tất cả</button>
+<button class="px-4 py-2 rounded-lg text-sm font-bold hover:bg-surface-container-highest whitespace-nowrap">Entry</button>
+<button class="px-4 py-2 rounded-lg text-sm font-bold hover:bg-surface-container-highest whitespace-nowrap">Mid</button>
+<button class="px-4 py-2 rounded-lg text-sm font-bold hover:bg-surface-container-highest whitespace-nowrap">Premium</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="group bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 tonal-depth-shift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold">Entry</span>
+<div class="text-2xl font-extrabold text-primary-container">199.000đ</div>
+</div>
+<h3 class="text-xl font-bold mb-4">Quản lý Thu Chi Doanh Nghiệp</h3>
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="Minimalist business expense tracking spreadsheet interface with clean typography and soft colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCazVkgW_xnahUwp3S7G7k6ij-mUMToXIL-q9WAxxRb-GyO1kfjTZVyFQSl3OedEkNzsskQv087eCPOD-_reSartBw5eWD30nHbK3p3gFRq4taJxq_3IXBhBtkJnloGz7okzglNKIJyITBChOhqm0wWUsEBnnmkOYDl_SmTOzZklDhxJkmzSmfoDTOJNkXxSvd9i6UZbpVCxQO4htSjw8BpfjCad4SlE39MczCkwdENHS9MIQFT_489CbesGjt4RBO5hvevXjnF-g"/>
+<button class="w-full py-3 rounded-xl border border-outline-variant text-sm font-bold group-hover:bg-primary-container group-hover:text-white transition-all">Chi tiết sản phẩm</button>
+</div>
+<!-- Product 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-2xl border-2 border-secondary/20 relative tonal-depth-shift">
+<div class="absolute -top-4 left-6 bg-secondary text-on-secondary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">Bán Chạy</div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Mid</span>
+<div class="text-2xl font-extrabold text-primary-container">239.000đ</div>
+</div>
+<h3 class="text-xl font-bold mb-4">Quản lý Chấm Công Tính Lương</h3>
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="Human resources payroll management dashboard showing employee timesheets and salary calculations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs4TaJLQGLkrWM9ykY9FZ9Wd1G62MBKgSeL6nXsNoNsNpYFHUe8vhp_NGDImCrub53h2l3K1B4I-cL4MRSOT7VKBRMwXD6Y3Zvqpao6Z3dC38azCP6C9QGxfUd5qNp3h_kl3tO3VUIC5D1kKJVcFxP2Zqq27d1W0A9FGMGd1Svdm__QMjuHChZ66e0fofVcnJVI8UUmGhEcqqJzfhNpruJ9lER9RGfWp0eectQZ-x50K8Snh6gEW985UYxZPui9wC5Vh2Z_JXqhg"/>
+<button class="w-full py-3 rounded-xl bg-secondary-container text-on-secondary-container text-sm font-bold shadow-sm">Mua ngay</button>
+</div>
+<!-- Product 3 -->
+<div class="group bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 tonal-depth-shift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Mid</span>
+<div class="text-2xl font-extrabold text-primary-container">249.000đ</div>
+</div>
+<h3 class="text-xl font-bold mb-4">Quản lý Thu Chi Công Nợ + BCTC</h3>
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="Financial reporting dashboard with bar charts and accounting statements in a soft professional UI" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeS4RDCnD3EKr3U1PXGgHHfNi8e4y04vcbtpobBFto8XGaZ-ztNYtAjcNhY2Rm3eCi8lV-2zW9Tg_89mp4oSDbvIkrKtq2oEWSV720GeRK_MsoeOcWvftLiv-0PXYOZ_y40w6Z8lJscKvqJvkCNE1Jnaqmt4anD_eXpdStTXKvUmHvTuR-elvZrFj9OaBkNWpdzaK-mQDGcrHVvwgWIsB2beLLLqcqO_QDRWpn7n03YOjOuNWbJ4PAwqPNoEu6rrHIjvEmqYG7g"/>
+<button class="w-full py-3 rounded-xl border border-outline-variant text-sm font-bold group-hover:bg-primary-container group-hover:text-white transition-all">Chi tiết sản phẩm</button>
+</div>
+<!-- Product 4 -->
+<div class="group bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 tonal-depth-shift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Mid</span>
+<div class="text-2xl font-extrabold text-primary-container">289.000đ</div>
+</div>
+<h3 class="text-xl font-bold mb-4">Quản lý Dự Án</h3>
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="Project management tool showing task progression and gantt charts with modern aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd66GXoYYpI-Dy4HhjjDTZC_idZcCh1CRFvUqHO256PAWhLXbAco-G0IKmwyold8FhCovMN-BMenPGN23SdViZKPkjToJECJSbEpXnmAUXb_Cz-LbT9kINSw7f_Yp8xja91MNStmliCs-gd400-4Gh1yv3EhsdMN6FOsrBN3KVt-GEDe_tE4IhDbX4sgEyeWQf248wXCSq3cco9mnMI8EeUSyV-0Wi8C-xtG5qYcHn0C0SuL0mroI6BImTAZ3PvzKmOLzufmN5Lg"/>
+<button class="w-full py-3 rounded-xl border border-outline-variant text-sm font-bold group-hover:bg-primary-container group-hover:text-white transition-all">Chi tiết sản phẩm</button>
+</div>
+<!-- Product 5 -->
+<div class="group bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 tonal-depth-shift">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold">Mid</span>
+<div class="text-2xl font-extrabold text-primary-container">289.000đ</div>
+</div>
+<h3 class="text-xl font-bold mb-4">Quản lý Tuyển Dụng Nhân Sự</h3>
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="Recruitment dashboard showing applicant pipeline and job vacancies in a clean interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7mib0lbZJpg7rlwFo6AI4iwlHAaOi6vvISiNWyPTNGFYiG0UynYB8KdBEbdhFABUdGlZvhb6XnJT4xC0Zq0bIlo-THUK_nni1zaorESMbyqvtmnVL3lmsBEk4qpEZMFL1WqJ1ASeFux2ENwjX22XYCBcsjSKPEjYdiEkuOqVebQFmkLDaYG7ykL_b0YSsWZhwffB-fEsmAcla-FcKZL9lCGB4qXg-rMHrORfZqptmXuc0IXN99bweGr8wSWN3nB0z-yPJEv6q6w"/>
+<button class="w-full py-3 rounded-xl border border-outline-variant text-sm font-bold group-hover:bg-primary-container group-hover:text-white transition-all">Chi tiết sản phẩm</button>
+</div>
+<!-- Product 6 -->
+<div class="group bg-surface-container-lowest p-6 rounded-2xl border-2 border-secondary/20 relative tonal-depth-shift">
+<div class="absolute -top-4 left-6 bg-error text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">HOT</div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">Premium</span>
+<div class="text-2xl font-extrabold text-primary-container">339.000đ</div>
+</div>
+<h3 class="text-xl font-bold mb-4">CRM Quản Lý Khách Hàng</h3>
+<img class="w-full h-48 object-cover rounded-xl mb-6" data-alt="Customer relationship management software displaying lead statistics and sales funnel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7vxZD37wKW0GIEltYAfuEqOr9FjcKLD_WgbYx3-iDDGg8lakxELl1Q2F6NJCGZha5yVl8C3WtZwf5W5yhLsw9rd9wr-UDI94lkuZ6I0f18JlSLpfK6yss3jN02ThRFTKVTyvwR1QxEHmMchzGoYSdeHgVu0Q1ZHtwp_1i1Hm1CsBm3OyTvbCco-KStg38MUx17WFJnmobvaowN5vosyu1DBEzTsahW2_ld-5lgeENjNbMisN8uQnrf559VDTu2jjL4DShMBxgJw"/>
+<button class="w-full py-3 rounded-xl bg-secondary-container text-on-secondary-container text-sm font-bold shadow-sm">Mua ngay</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. KEY DIFFERENTIATOR -->
+<section class="bg-primary-container py-24 px-6 text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="max-w-4xl mx-auto relative z-10">
+<h2 class="text-4xl font-extrabold text-center mb-16 tracking-tight">Tại sao chọn DoSheet thay vì Excel hay MISA?</h2>
+<div class="bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-white/10">
+<th class="p-6 text-lg font-bold">Tính năng</th>
+<th class="p-6 text-lg font-bold text-center border-x border-white/5">MISA AMIS</th>
+<th class="p-6 text-lg font-bold text-center text-secondary-fixed">DoSheet</th>
+</tr>
+</thead>
+<tbody class="text-on-primary-container">
+<tr class="border-b border-white/5">
+<td class="p-6 text-white font-medium">Chi phí duy trì</td>
+<td class="p-6 text-center">3.000.000đ+ / năm</td>
+<td class="p-6 text-center text-secondary-fixed font-bold">0đ (Mua 1 lần)</td>
+</tr>
+<tr class="border-b border-white/5">
+<td class="p-6 text-white font-medium">Làm chủ dữ liệu</td>
+<td class="p-6 text-center">Nằm trên server MISA</td>
+<td class="p-6 text-center text-secondary-fixed font-bold">Nằm trên Drive của bạn</td>
+</tr>
+<tr class="border-b border-white/5">
+<td class="p-6 text-white font-medium">Tốc độ tùy chỉnh</td>
+<td class="p-6 text-center">Phức tạp, cần IT</td>
+<td class="p-6 text-center text-secondary-fixed font-bold">Tự do như Google Sheets</td>
+</tr>
+<tr>
+<td class="p-6 text-white font-medium">AI Phân tích</td>
+<td class="p-6 text-center flex justify-center items-center"><span class="material-symbols-outlined text-error">close</span></td>
+<td class="p-6 text-center flex justify-center items-center"><span class="material-symbols-outlined text-tertiary-fixed">check_circle</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- 6. AI ADVISOR SECTION -->
+<section class="py-24 px-6 bg-slate-950 text-white relative">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="inline-block bg-tertiary-container text-tertiary-fixed px-4 py-1.5 rounded-full text-xs font-bold mb-6">Add-on tùy chọn · 149.000đ/tháng</span>
+<h2 class="text-4xl font-extrabold mb-8 leading-tight">AI Cố vấn Kinh doanh — <br/><span class="text-tertiary-fixed">mỗi Chủ Nhật hàng tuần</span></h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed">smart_toy</span>
+<div>
+<h4 class="font-bold text-lg">Tự động</h4>
+<p class="text-slate-400 text-sm">Quét dữ liệu từ Sheets mà không cần bạn làm gì.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed">insights</span>
+<div>
+<h4 class="font-bold text-lg">Insight</h4>
+<p class="text-slate-400 text-sm">Phát hiện xu hướng chi phí &amp; doanh thu bất thường.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed">send</span>
+<div>
+<h4 class="font-bold text-lg">Zalo/Email</h4>
+<p class="text-slate-400 text-sm">Báo cáo gửi trực tiếp đến ứng dụng bạn dùng hàng ngày.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-tertiary-fixed to-primary-container rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-950">auto_awesome</span>
+</div>
+<span class="font-bold">Báo cáo Chủ Nhật (24/11)</span>
+</div>
+<span class="text-xs text-slate-500">DoSheet AI v1.2</span>
+</div>
+<div class="space-y-6">
+<div class="p-4 bg-slate-800/50 rounded-xl">
+<div class="text-xs text-slate-500 mb-1">Cảnh báo chi phí</div>
+<div class="text-sm font-medium">Chi phí tiếp khách tăng 22% so với tuần trước.</div>
+</div>
+<div class="p-4 bg-slate-800/50 rounded-xl border-l-4 border-tertiary-fixed">
+<div class="text-xs text-slate-500 mb-1">Lời khuyên cố vấn</div>
+<div class="text-sm italic">"Dòng tiền dự kiến sẽ âm vào tuần thứ 3 tháng tới nếu không thu hồi công nợ khách hàng A..."</div>
+</div>
+<div class="h-32 bg-slate-800/20 rounded-xl overflow-hidden flex items-end gap-1 p-2">
+<div class="flex-1 bg-tertiary-fixed/20 h-12 rounded-sm"></div>
+<div class="flex-1 bg-tertiary-fixed/30 h-16 rounded-sm"></div>
+<div class="flex-1 bg-tertiary-fixed/50 h-24 rounded-sm"></div>
+<div class="flex-1 bg-tertiary-fixed h-20 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. HOW IT WORKS -->
+<section class="py-24 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-3xl font-extrabold text-center mb-4 tracking-tight">Nhận giao diện trong 30 giây, setup xong 15 phút</h2>
+<div class="bg-blue-50 border border-blue-100 p-4 rounded-xl max-w-2xl mx-auto mb-16 flex items-center gap-4 text-blue-800 text-sm font-medium">
+<span class="material-symbols-outlined">security</span>
+                Chúng tôi không bao giờ yêu cầu mật khẩu Drive. Bạn chỉ tạo bản sao template và tự sở hữu.
+            </div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="text-center">
+<div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-container text-2xl font-bold mx-auto mb-6 border border-outline-variant/10">1</div>
+<h4 class="font-bold mb-2">Thanh toán</h4>
+<p class="text-sm text-on-surface-variant">Chọn sản phẩm &amp; thanh toán qua QR tự động.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-container text-2xl font-bold mx-auto mb-6 border border-outline-variant/10">2</div>
+<h4 class="font-bold mb-2">Nhận Web App</h4>
+<p class="text-sm text-on-surface-variant">Hệ thống gửi link App Script qua Email/Zalo.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-container text-2xl font-bold mx-auto mb-6 border border-outline-variant/10">3</div>
+<h4 class="font-bold mb-2">Cấu hình</h4>
+<p class="text-sm text-on-surface-variant">Xem video HD 3 phút để cài đặt danh mục.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-secondary-container rounded-2xl shadow-sm flex items-center justify-center text-on-secondary-container text-2xl font-bold mx-auto mb-6">4</div>
+<h4 class="font-bold mb-2">Dùng ngay</h4>
+<p class="text-sm text-on-surface-variant">Phân quyền nhân viên &amp; bắt đầu nhập liệu.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. TESTIMONIALS -->
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6 leading-relaxed">"Thay vì bỏ vài triệu mỗi năm cho phần mềm kế toán, DoSheet giải quyết gọn 90% nhu cầu của quán mình với giá chưa tới 300k."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a Vietnamese female entrepreneur in a bright office space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARvPdPKLesMLktUc9xtmFX4oE7V-NzPhN-QkF89OXx_RgTpS5oyiC3wKs_Iyu2h6m4BZado_0mtUqicftD8pHsCiW1AbaB2g2sJ6khutKnX4DXy_qccVlX8Sio11TBA6kjGpoJpfIEq-OhhgRvpQxq3mdE4N378ghBgIUnFqiNxIx7ma4SOvaxjdsoy_2Oh33IjqN20AogRknokyM_KTWOG0iFIe74gKru_b6GNqXEcGdJig0guCq6nTGKD3ssp0eaXtfX4hABzQ"/>
+<div>
+<div class="font-bold">Trần Hương</div>
+<div class="text-xs text-on-surface-variant">Chủ Quán Cafe</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6 leading-relaxed">"Dữ liệu nằm trên Sheets nên mình cực kỳ yên tâm. Tùy biến thêm cột hay báo cáo cũng rất nhanh, không bị gò bó."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Close up of a professional man in his 30s smiling in a modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJcEFarQX1g12RZfshfVHVJJOUXJdS7Fd2S0NkSl5YMll03OhgJtveFEIiuKgdzCDrRXzAY8zlIZypwTmz9VDbAOucmQxFnMtS2fx5D3JK9O9JwB_cHDvUhj7_Zcl5MsykJvbQp7dNNBu3uMib-eZISovjrvw2MY57MmqF_r7lvs8vRot3RyILHH1CGwaTkJmNcoTK2NAhL2yeZNCUreWSTqst1-zYM4BJZQZH2yyVmk03-Xv711lLIX8d0oGOpea06YZxXkoSxg"/>
+<div>
+<div class="font-bold">Minh Nguyễn</div>
+<div class="text-xs text-on-surface-variant">Quản lý Dự án</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6 leading-relaxed">"Phần AI Cố vấn hàng tuần thực sự đáng giá. Nó chỉ ra được những lỗ hổng trong dòng tiền mà mình thường bỏ sót."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a successful businessman looking at the camera with confidence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCapppehCmUY9GeJl8J-P4kHySrk38LKHW4GFYxWyuNJxxet9X5OxGC1sFhFVLtHxvm7Vyl4ZrKMmAE-dINdrSzkQD-FGqRYMtacN5x_MPDLIalrlJkn68xi5bQ_kY3sl5ia1hsglj3JRxtezhE2aw3-BJepUw-dLua5N4wQHgCXE45KQECA-vyErnXge_iiJM62P_rgZIzK9ZUa0mRzf2NPIPzAzKeL3AvbUflr0KS3WwlJPz_BECO27bJvzuhL3GU6p1dzfY6EQ"/>
+<div>
+<div class="font-bold">Phúc Lê</div>
+<div class="text-xs text-on-surface-variant">Founder Teky Branch</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. BUNDLE SECTION -->
+<section class="py-24 px-6 bg-surface-container-high">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-3xl font-extrabold text-center mb-16 tracking-tight">Combo tiết kiệm — mua 2+ sản phẩm</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10">
+<h3 class="font-bold text-xl mb-2">Bundle Khởi Nghiệp</h3>
+<p class="text-xs text-on-surface-variant mb-6 uppercase tracking-wider">Thu chi + Chấm công</p>
+<div class="text-3xl font-extrabold text-primary-container mb-8">349.000đ</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-tertiary-fixed-variant text-lg">check</span> Tiết kiệm 15%</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-tertiary-fixed-variant text-lg">check</span> Support 1:1</li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary-container font-bold hover:bg-primary-container hover:text-white transition-all">Chọn Combo</button>
+</div>
+<div class="bg-primary-container text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden transform scale-105 z-10">
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter">Bestseller</div>
+<h3 class="font-bold text-xl mb-2">Bundle Startup Đầy Đủ</h3>
+<p class="text-xs text-white/60 mb-6 uppercase tracking-wider">Tài chính + CRM + Nhân sự</p>
+<div class="text-3xl font-extrabold text-white mb-8">649.000đ</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-secondary text-lg">check</span> Tiết kiệm 30%</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-secondary text-lg">check</span> Miễn phí 1 tháng AI</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-secondary text-lg">check</span> Ưu tiên Update</li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-secondary text-on-secondary font-bold shadow-lg hover:brightness-110 transition-all">Chọn Combo</button>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl border border-outline-variant/10">
+<h3 class="font-bold text-xl mb-2">Bundle F&amp;B</h3>
+<p class="text-xs text-on-surface-variant mb-6 uppercase tracking-wider">Thu chi + Kho + Chấm công</p>
+<div class="text-3xl font-extrabold text-primary-container mb-8">599.000đ</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-tertiary-fixed-variant text-lg">check</span> Tiết kiệm 20%</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-tertiary-fixed-variant text-lg">check</span> Video HD vận hành</li>
+</ul>
+<button class="w-full py-4 rounded-xl border-2 border-primary-container font-bold hover:bg-primary-container hover:text-white transition-all">Chọn Combo</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. FAQ -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-extrabold text-center mb-12 tracking-tight">Câu hỏi thường gặp</h2>
+<div class="space-y-4">
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-all">
+<summary class="list-none font-bold flex justify-between items-center cursor-pointer">
+                        Dữ liệu của tôi có được an toàn không?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="pt-4 text-on-surface-variant text-sm leading-relaxed">Tuyệt đối an toàn. Toàn bộ file và dữ liệu nằm 100% trên tài khoản Google Drive cá nhân hoặc doanh nghiệp của bạn. DoSheet không có quyền truy cập trừ khi bạn chủ động chia sẻ.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-all">
+<summary class="list-none font-bold flex justify-between items-center cursor-pointer">
+                        Tôi có phải trả phí duy trì hàng tháng không?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="pt-4 text-on-surface-variant text-sm leading-relaxed">Không. Các sản phẩm quản lý cốt lõi của DoSheet là mua một lần và dùng trọn đời. Chỉ riêng phần "AI Cố vấn" là add-on tùy chọn có phí duy trì nếu bạn muốn sử dụng.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-all">
+<summary class="list-none font-bold flex justify-between items-center cursor-pointer">
+                        Google Sheets có tải nổi dữ liệu lớn không?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="pt-4 text-on-surface-variant text-sm leading-relaxed">Với các doanh nghiệp SME, Google Sheets hỗ trợ tới 10 triệu ô dữ liệu. Các template của DoSheet được tối ưu script để chạy mượt mà ngay cả với hàng chục ngàn dòng dữ liệu.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-all">
+<summary class="list-none font-bold flex justify-between items-center cursor-pointer">
+                        Tôi không rành về kỹ thuật có dùng được không?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="pt-4 text-on-surface-variant text-sm leading-relaxed">Rất dễ dàng. Chúng mình đã thiết kế để người chỉ biết click chuột cũng dùng được. Có video hướng dẫn chi tiết từng bước cho mỗi sản phẩm.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-all">
+<summary class="list-none font-bold flex justify-between items-center cursor-pointer">
+                        Có hỗ trợ trên điện thoại không?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="pt-4 text-on-surface-variant text-sm leading-relaxed">Có. Bạn có thể nhập liệu và xem báo cáo trực tiếp qua ứng dụng Google Sheets trên iOS hoặc Android cực kỳ tiện lợi.</p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 open:bg-surface-container-high transition-all">
+<summary class="list-none font-bold flex justify-between items-center cursor-pointer">
+                        Nếu tôi cần hỗ trợ thì liên hệ ai?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="pt-4 text-on-surface-variant text-sm leading-relaxed">Chúng mình có đội ngũ support qua Zalo luôn sẵn sàng trong giờ hành chính để giải đáp mọi thắc mắc của bạn.</p>
+</details>
+</div>
+</div>
+</section>
+<!-- 11. FINAL CTA -->
+<section class="py-24 px-6 relative overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="bg-primary-container rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden flex flex-col md:flex-row items-center gap-16 shadow-2xl">
+<div class="flex-1 space-y-8">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">Thử 2 tuần AI Cố vấn miễn phí</h2>
+<p class="text-on-primary-container text-lg">Đăng ký để nhận bản tin phân tích mẫu cho ngành của bạn và trải nghiệm quyền năng của AI trên chính dữ liệu của bạn.</p>
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed">lock</span>
+</div>
+<span class="text-sm font-medium">Bảo mật thông tin 100%. Không spam.</span>
+</div>
+</div>
+<div class="flex-1 w-full max-w-md">
+<form class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 space-y-4">
+<div>
+<label class="text-xs font-bold uppercase tracking-widest text-on-primary-container block mb-2">Họ tên</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-secondary transition-all" placeholder="Nguyễn Văn A" type="text"/>
+</div>
+<div>
+<label class="text-xs font-bold uppercase tracking-widest text-on-primary-container block mb-2">Email</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-secondary transition-all" placeholder="example@email.com" type="email"/>
+</div>
+<div>
+<label class="text-xs font-bold uppercase tracking-widest text-on-primary-container block mb-2">Ngành nghề</label>
+<select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-secondary transition-all appearance-none">
+<option class="bg-slate-900">Bán lẻ / F&amp;B</option>
+<option class="bg-slate-900">Dịch vụ / Freelance</option>
+<option class="bg-slate-900">Sản xuất / Xây dựng</option>
+<option class="bg-slate-900">Khác</option>
+</select>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-bold py-4 rounded-xl shadow-lg hover:scale-[1.02] active:scale-95 transition-all mt-4">Nhận bản tin miễn phí</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. FOOTER -->
+<footer class="bg-slate-50 py-20 px-6 border-t border-slate-200">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+<div class="lg:col-span-2 space-y-6">
+<div class="text-2xl font-bold tracking-tighter">
+<span class="text-primary-container">Do</span><span class="text-secondary">Sheet</span>
+</div>
+<p class="text-on-surface-variant text-sm max-w-xs leading-relaxed">
+                    Hệ thống quản trị tinh gọn cho SME &amp; Hộ kinh doanh. Precision-crafted for architectural business management on Google Sheets.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-slate-200 hover:border-secondary transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-slate-200 hover:border-secondary transition-colors" href="#"><span class="material-symbols-outlined text-lg">forum</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-6">Sản phẩm</h5>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li><a class="hover:text-secondary transition-all" href="#">Quản lý Tài chính</a></li>
+<li><a class="hover:text-secondary transition-all" href="#">Quản lý Nhân sự</a></li>
+<li><a class="hover:text-secondary transition-all" href="#">CRM Khách hàng</a></li>
+<li><a class="hover:text-secondary transition-all" href="#">Combo Tiết kiệm</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6">Tài nguyên</h5>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li><a class="hover:text-secondary transition-all" href="help-center.html">Hướng dẫn sử dụng</a></li>
+<li><a class="hover:text-secondary transition-all" href="community.html">Cộng đồng Sheets</a></li>
+<li><a class="hover:text-secondary transition-all" href="#">API Documentation</a></li>
+<li><a class="hover:text-secondary transition-all" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6">Liên hệ</h5>
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">call</span>
+                        0987-xxx-xxx
+                    </div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">chat</span>
+                        Zalo: DoSheet Support
+                    </div>
+<div class="pt-4">
+<button class="bg-white border border-slate-200 px-4 py-2 rounded-lg text-xs font-bold hover:bg-slate-100 transition-all">Hỗ trợ kỹ thuật</button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-16 mt-16 border-t border-slate-200 flex flex-col md:flex-row justify-between gap-6 text-xs text-on-surface-variant font-medium">
+<p>© 2024 DoSheet. Tất cả quyền lợi được bảo lưu.</p>
+<div class="flex gap-8">
+<a class="hover:text-secondary" href="#">Privacy Policy</a>
+<a class="hover:text-secondary" href="#">Terms of Service</a>
+<a class="hover:text-secondary" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+</body></html>

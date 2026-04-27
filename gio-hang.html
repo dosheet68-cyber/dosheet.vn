@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#705d00",
+                    "surface-container-highest": "#e5e1e3",
+                    "tertiary": "#000201",
+                    "surface-container-high": "#ebe7e9",
+                    "tertiary-fixed": "#82faab",
+                    "surface-tint": "#5d5c74",
+                    "primary-fixed-dim": "#c6c4df",
+                    "on-tertiary-fixed-variant": "#00522b",
+                    "tertiary-fixed-dim": "#64dd91",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e5e1e3",
+                    "on-error": "#ffffff",
+                    "surface": "#fcf8fa",
+                    "inverse-surface": "#313032",
+                    "primary-container": "#1a1a2e",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fcd400",
+                    "on-surface-variant": "#47464c",
+                    "on-background": "#1c1b1d",
+                    "surface-container": "#f1edef",
+                    "on-secondary-fixed": "#221b00",
+                    "tertiary-container": "#00220e",
+                    "primary-fixed": "#e2e0fc",
+                    "error": "#ba1a1a",
+                    "primary": "#00000b",
+                    "on-primary-fixed-variant": "#45455b",
+                    "secondary-fixed-dim": "#e9c400",
+                    "inverse-primary": "#c6c4df",
+                    "surface-bright": "#fcf8fa",
+                    "on-tertiary-fixed": "#00210e",
+                    "on-tertiary-container": "#009854",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6e5c00",
+                    "on-primary-container": "#83829b",
+                    "inverse-on-surface": "#f4f0f2",
+                    "outline-variant": "#c8c5cd",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-dim": "#ddd9db",
+                    "on-surface": "#1c1b1d",
+                    "on-primary-fixed": "#1a1a2e",
+                    "on-error-container": "#93000a",
+                    "background": "#fcf8fa",
+                    "outline": "#78767d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f6f2f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #00000b 0%, #1a1a2e 100%);
+        }
+        .tonal-depth-shift {
+            background: rgba(252, 248, 250, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component Shell) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-blue-950 dark:text-white">
+                DoSheet
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="index.html">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="index.html">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="index.html">How it Works</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors" href="index.html">FAQ</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 dark:text-slate-400 px-4 py-2 text-sm font-semibold">Login</button>
+<button class="signature-gradient text-on-primary px-6 py-2.5 rounded shadow-sm hover:scale-95 duration-200 ease-in-out font-semibold">Get Started</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-24 px-6">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="text-[3.5rem] font-extrabold tracking-tight text-primary-container leading-tight mb-4">
+                    Giỏ hàng của bạn
+                </h1>
+<div class="w-24 h-1 bg-secondary-fixed"></div>
+</div>
+<!-- Asymmetrical Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Main Cart Column -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Table-less List (Architectural Ledger Style) -->
+<div class="bg-surface-container-low rounded-xl p-8 space-y-6">
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant/20">
+<span class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant">Sản phẩm</span>
+<div class="flex space-x-24 text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant">
+<span class="w-20 text-center">Số lượng</span>
+<span class="w-32 text-right">Thành tiền</span>
+</div>
+</div>
+<!-- Product Item 1 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between py-4 group">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 rounded bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-3xl">fact_check</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-primary-container">Quản lý Chấm Công</h3>
+<p class="text-on-surface-variant text-sm">Gói chuyên nghiệp cho kiến trúc sư</p>
+<p class="text-secondary font-semibold mt-1">239.000đ</p>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end mt-4 md:mt-0 space-x-24">
+<div class="flex items-center bg-surface-container-highest rounded px-3 py-1.5">
+<button class="p-1 hover:text-secondary"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="px-4 font-bold text-primary-container">1</span>
+<button class="p-1 hover:text-secondary"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<div class="w-32 text-right font-bold text-lg text-primary-container">
+                                    239.000đ
+                                </div>
+</div>
+</div>
+</div>
+<!-- Add-on Offer Card (Glassmorphism & Tonal Depth) -->
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-1 px-1">
+<div class="bg-primary-container/95 backdrop-blur-xl p-8 rounded-[inherit] flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-start gap-6">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-fixed" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed text-[0.65rem] font-black px-2 py-0.5 rounded-full mb-2 tracking-wider">ƯU ĐÃI ĐẶC BIỆT</span>
+<h4 class="text-white text-xl font-bold">AI Cố vấn Kinh doanh</h4>
+<p class="text-on-primary-container text-sm leading-relaxed max-w-md mt-1">
+                                        Phân tích dòng tiền và dự báo lợi nhuận dự án tự động bằng trí tuệ nhân tạo.
+                                    </p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-3">
+<div class="text-right">
+<span class="block text-secondary-fixed text-2xl font-bold">149.000đ/tháng</span>
+<span class="text-on-primary-container text-xs line-through">299.000đ</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded font-bold text-sm hover:lift transition-all">
+                                    Thêm vào giỏ
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Sidebar -->
+<aside class="lg:col-span-4 sticky top-32">
+<div class="bg-surface-container-low rounded-xl p-8 shadow-[0_20px_40px_rgba(26,26,46,0.06)]">
+<h2 class="text-xl font-bold text-primary-container mb-8">Tóm tắt đơn hàng</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between text-on-surface-variant">
+<span>Tạm tính</span>
+<span class="font-medium">239.000đ</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Giảm giá (Bundle)</span>
+<span class="font-medium text-tertiary-fixed-dim">-0đ</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-between items-end">
+<span class="font-bold text-primary-container">Tổng cộng</span>
+<div class="text-right">
+<span class="block text-3xl font-extrabold text-primary-container">239.000đ</span>
+<span class="text-xs text-on-surface-variant">Đã bao gồm VAT</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container py-4 rounded-lg font-extrabold text-lg shadow-sm hover:scale-[1.02] active:scale-95 transition-all mb-8 flex items-center justify-center gap-2">
+                            Tiến hành thanh toán
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Trust Badges -->
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col items-center text-center p-4 bg-white rounded shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-[0.7rem] font-bold text-primary-container uppercase tracking-tight">100% Bảo mật</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 bg-white rounded shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="text-[0.7rem] font-bold text-primary-container uppercase tracking-tight">Hỗ trợ 24/7</span>
+</div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="mt-8 p-6 rounded-xl bg-tertiary-fixed/10 border border-tertiary-fixed/20 flex items-center gap-4">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">info</span>
+<p class="text-xs text-on-tertiary-fixed-variant leading-relaxed">
+                            Bằng cách nhấn thanh toán, bạn đồng ý với các Điều khoản Dịch vụ và Chính sách Quyền riêng tư của DoSheet.
+                        </p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Shell) -->
+<footer class="w-full py-12 px-6 mt-auto bg-slate-50 dark:bg-slate-900">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<div class="space-y-4">
+<div class="text-lg font-bold text-blue-950 dark:text-white">DoSheet</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm">
+                    © 2024 DoSheet. Precision-crafted for architectural business management.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="space-y-2">
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="help-center.html">Contact Support</a>
+<a class="block text-slate-500 dark:text-slate-400 hover:text-yellow-600 transition-all opacity-80 hover:opacity-100" href="#">API Documentation</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
